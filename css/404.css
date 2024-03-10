@@ -8,7 +8,7 @@ html{
 body{
     position: relative;
     height: 100%;
-    background-color: #000c2f;
+    background-color: #00a65a;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -20,7 +20,7 @@ p{
 }
 
 img{
-    background-size: auto;
+    background-size: auto;transform: translateY(-1600px);filter: drop-shadow(#ffffff 0 1600px);
 }
 
 .error{
