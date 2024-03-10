@@ -1,89 +1,238 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-
-    <title>纯CSS实现全屏滚动贴合效果（竖屏）</title>
-	<style>
-*{
-    /* 初始化 */
-    margin: 0;
-    padding: 0;
-}
-.container{
-    /* 100%窗口宽度和高度 */
-    width: 100vw;
-    height: 100vh;
-    /* 设置滚动贴合的方式：沿Y轴滚动 mandatory表示强制滚动 */
-    scroll-snap-type: y mandatory;
-    /* 需要把滚动条设置到直接父容器，scroll-snap-type才能生效 */
-    /* 溢出时，垂直保留滚动条，水平隐藏滚动条 */
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-.container .contdiv{
-    /* 100%窗口宽度和高度 */
-    width: 100vw;
-    height: 100vh;
-    /* 弹性布局 居中 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* 通过var函数调用自定义属性--c，设置各个div的背景颜色 */
-    background-color: var(--c);
-    font-size: 200px;
-    color: #fff;
-    /* 设置下一页的内容会滚动贴合到顶部 */
-    scroll-snap-align: start;
-}
-{
-background: #00b6cc;
-
-background: #00727f;
-background: #00e4ff;
-background: #4cecff;
-}
-
-.num-1{background:#fc4274;}
-.num-2{background:#ff8155;}
-.num-3{background:#00b6cc;}
-.num-4{background:#817AE3;}
-.num-5{background:#4cecff;}
-.num-6{background:#FBAB7E;}
-.num-7{background:#fc4274;}
-.num-8{background:#ff8155;}
-.num-9{background:#00e4ff;}
-.num-10{background:#FBAB7E;}
-.num-11{background:#fc4274;}
-.num-12{background:#ff8155;}
-.num-13{background:#00727f;}
-.num-14{background:#817AE3;}
-.num-15{background:#FF6A88;}
-.num-16{background:#FBAB7E;}
-.num-17{background:#fc4274;}
-.num-18{background:#ff8155;}
-.num-19{background:#4cecff;}
-.num-20{background:#FBAB7E;}
-	</style>
-<style> /*设置奇数行颜色*/ table tr:nth-child(odd) { background: rgb(178, 178, 179); } 
-/*设置偶数行颜色*/ table tr:nth-child(even) { background: rgb(241, 241, 241); } 
-/*设置鼠标聚焦到行上是凸显*/ table tr:hover{ background-color: rgb(121, 121, 121); } </style>
-</head>
-
+<title>Free CSS | Free CSS Templates | Demo of the HTML CSS Template Wave Cafe</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<style type="text/css">
+#freecssfooter{display:block;width:100%;padding:120px 0 20px;overflow:hidden;background-color:transparent;z-index:5000;text-align:center;}
+#freecssfooter div#fcssholder div{display:none;}
+#freecssfooter div#fcssholder div:first-child{display:block;}
+#freecssfooter div#fcssholder div:first-child a{float:none;margin:0 auto;}
+</style></head>
 <body>
-    <div class="container">
-        <!-- --c为自定义属性（颜色值），可通过var函数进行调用 -->
-        <div class="contdiv" style="--c: lightcoral;">1</div>
-        <div class="contdiv" style="--c: lightseagreen;">2</div>
-        <div class="contdiv" style="--c: lightsalmon;">3</div>
-        <div class="contdiv" style="--c: lightskyblue;">4</div>
+<script type="text/javascript">
+(function(){
+  var bsa = document.createElement('script');
+     bsa.type = 'text/javascript';
+     bsa.async = true;
+     bsa.src = '//s3.buysellads.com/ac/bsa.js';
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+})();
+</script>
+<div class="tm-container">
+  <div class="tm-row">
+    <div class="tm-left">
+      <div class="tm-left-inner">
+        <div class="tm-site-header"><i class="fas fa-coffee fa-3x tm-site-logo"></i>
+          <h1 class="tm-site-name">Wave Cafe</h1>
+        </div>
+        <nav class="tm-site-nav">
+          <ul class="tm-site-nav-ul">
+            <li class="tm-page-nav-item"><a href="#drink" class="tm-page-link active"><i class="fas fa-mug-hot tm-page-link-icon"></i> <span>Drink Menu</span></a></li>
+            <li class="tm-page-nav-item"><a href="#about" class="tm-page-link"><i class="fas fa-users tm-page-link-icon"></i> <span>About Us</span></a></li>
+            <li class="tm-page-nav-item"><a href="#special" class="tm-page-link"><i class="fas fa-glass-martini tm-page-link-icon"></i> <span>Special Items</span></a></li>
+            <li class="tm-page-nav-item"><a href="#contact" class="tm-page-link"><i class="fas fa-comments tm-page-link-icon"></i> <span>Contact</span></a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
+    <div class="tm-right">
+      <main class="tm-main">
+        <div id="drink" class="tm-page-content">
+          <nav class="tm-black-bg tm-drinks-nav">
+            <ul>
+              <li><a href="javascript:void(0);" class="tm-tab-link active" data-id="cold">Iced Coffee</a></li>
+              <li><a href="javascript:void(0);" class="tm-tab-link" data-id="hot">Hot Coffee</a></li>
+              <li><a href="javascript:void(0);" class="tm-tab-link" data-id="juice">Fruit Juice</a></li>
+            </ul>
+          </nav>
+          <div id="cold" class="tm-tab-content">
+            <div class="tm-list">
+              <div class="tm-list-item"> <img src="assets/img/iced-americano.png" alt="website template image" class="tm-list-item-img">
+                <div class="tm-black-bg tm-list-item-text">
+                  <h3 class="tm-list-item-name">Iced Americano<span class="tm-list-item-price">$10.25</span></h3>
+                  <p class="tm-list-item-description">Here is a short description for the first item. Wave Cafe Template is provided by Tooplate.</p>
+                </div>
+              </div>
+              <div class="tm-list-item"> <img src="assets/img/iced-cappuccino.png" alt="website template image" class="tm-list-item-img">
+                <div class="tm-black-bg tm-list-item-text">
+                  <h3 class="tm-list-item-name">Iced Cappuccino<span class="tm-list-item-price">$12.50</span></h3>
+                  <p class="tm-list-item-description">Here is a list of 4 items or add more. You can use this template for commercial purposes.</p>
+                </div>
+              </div>
+              <div class="tm-list-item"> <img src="assets/img/iced-espresso.png" alt="website template image" class="tm-list-item-img">
+                <div class="tm-black-bg tm-list-item-text">
+                  <h3 class="tm-list-item-name">Iced Espresso<span class="tm-list-item-price">$14.25</span></h3>
+                  <p class="tm-list-item-description">Non tellus bibendum, vel sagittis nisl dictum. Quisque sagittis faucibus varius. Maecenas a.</p>
+                </div>
+              </div>
+              <div class="tm-list-item"> <img src="assets/img/iced-latte.png" alt="website template image" class="tm-list-item-img">
+                <div class="tm-black-bg tm-list-item-text">
+                  <h3 class="tm-list-item-name">Iced Latte<span class="tm-list-item-price">$11.50</span></h3>
+                  <p class="tm-list-item-description">Contents are organized into 3 tabs. Please contact Tooplate if you have anything to ask.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="hot" class="tm-tab-content">
+            <div class="tm-list">
+              <div class="tm-list-item"> <img src="assets/img/hot-americano.png" alt="website template image" class="tm-list-item-img">
+                <div class="tm-black-bg tm-list-item-text">
+                  <h3 class="tm-list-item-name">Hot Americano<span class="tm-list-item-price">$8.50</span></h3>
+                  <p class="tm-list-item-description">Here is a short description for the item along with a squared thumbnail.</p>
+                </div>
+              </div>
+              <div class="tm-list-item"> <img src="assets/img/hot-cappuccino.png" alt="website template image" class="tm-list-item-img">
+                <div class="tm-black-bg tm-list-item-text">
+                  <h3 class="tm-list-item-name">Hot Cappuccino<span class="tm-list-item-price">$9.50</span></h3>
+                  <p class="tm-list-item-description">Here is a list of 4 items that can add more as you need. Only content area will be scrolling.</p>
+                </div>
+              </div>
+              <div class="tm-list-item"> <img src="assets/img/hot-espresso.png" alt="website template image" class="tm-list-item-img">
+                <div class="tm-black-bg tm-list-item-text">
+                  <h3 class="tm-list-item-name">Hot Espresso<span class="tm-list-item-price">$7.50</span></h3>
+                  <p class="tm-list-item-description">Left side logo and main menu are fixed. The video background is fixed.</p>
+                </div>
+              </div>
+              <div class="tm-list-item"> <img src="assets/img/hot-latte.png" alt="website template image" class="tm-list-item-img">
+                <div class="tm-black-bg tm-list-item-text">
+                  <h3 class="tm-list-item-name">Hot Latte<span class="tm-list-item-price">$6.50</span></h3>
+                  <p class="tm-list-item-description">Page contents are organized into 3 tabs to show different lists of items.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="juice" class="tm-tab-content">
+            <div class="tm-list">
+              <div class="tm-list-item"> <img src="assets/img/smoothie-1.png" alt="website template image" class="tm-list-item-img">
+                <div class="tm-black-bg tm-list-item-text">
+                  <h3 class="tm-list-item-name">Strawberry Smoothie<span class="tm-list-item-price">$12.50</span></h3>
+                  <p class="tm-list-item-description">Here is a short description for the item along with a squared thumbnail.</p>
+                </div>
+              </div>
+              <div class="tm-list-item"> <img src="assets/img/smoothie-2.png" alt="website template image" class="tm-list-item-img">
+                <div class="tm-black-bg tm-list-item-text">
+                  <h3 class="tm-list-item-name">Red Berry Smoothie<span class="tm-list-item-price">$14.50</span></h3>
+                  <p class="tm-list-item-description">Here is a list of 4 items or add more. You can use this template for commercial purposes.</p>
+                </div>
+              </div>
+              <div class="tm-list-item"> <img src="assets/img/smoothie-3.png" alt="website template image" class="tm-list-item-img">
+                <div class="tm-black-bg tm-list-item-text">
+                  <h3 class="tm-list-item-name">Pineapple Smoothie<span class="tm-list-item-price">$16.50</span></h3>
+                  <p class="tm-list-item-description">Left side logo and main menu are fixed. The video background is fixed.</p>
+                </div>
+              </div>
+              <div class="tm-list-item"> <img src="assets/img/smoothie-4.png" alt="website template image" class="tm-list-item-img">
+                <div class="tm-black-bg tm-list-item-text">
+                  <h3 class="tm-list-item-name">Spinach Smoothie<span class="tm-list-item-price">$18.50</span></h3>
+                  <p class="tm-list-item-description">Nulla urna erat, bibendum id efficitur ac, finibus eget tortor. Donec porttitor tellus.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="about" class="tm-page-content">
+          <div class="tm-black-bg tm-mb-20 tm-about-box-1">
+            <h2 class="tm-text-primary tm-about-header">About Wave Cafe</h2>
+            <div class="tm-list-item tm-list-item-2"> <img src="assets/img/about-1.png" alt="website template image" class="tm-list-item-img tm-list-item-img-big">
+              <div class="tm-list-item-text-2">
+                <p>Wave Cafe is a one-page video background HTML CSS template from Tooplate. You can use this for your business websites.</p>
+                <p>Maximus neque, et commodo nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in risus in venenatis venenatis et.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tm-black-bg tm-mb-20 tm-about-box-2">
+            <div class="tm-list-item tm-list-item-2">
+              <div class="tm-list-item-text-2">
+                <h2 class="tm-text-primary">How we began</h2>
+                <p>Arcu vestibulum molestie convallis risus. Sed et dui elementum, scelerisque augue quis, hendrerit elit varius.</p>
+              </div>
+              <img src="assets/img/about-2.png" alt="website template image" class="tm-list-item-img tm-list-item-img-big tm-img-right"></div>
+            <p>Donec non urna elit. Quisque ut magna in dui mattis iaculis eu finibus metus. Suspendisse vel mi a lacus finibus vehicula vel ut diam. Nam pellentesque, mi quis ullamcorper.</p>
+          </div>
+        </div>
+        <div id="special" class="tm-page-content">
+          <div class="tm-special-items">
+            <div class="tm-black-bg tm-special-item"><img src="assets/img/special-01.jpg" alt="website template image">
+              <div class="tm-special-item-description">
+                <h2 class="tm-text-primary tm-special-item-title">Special One</h2>
+                <p class="tm-special-item-text">Here is a short text description for the first special item. Penatibus et magnis dis parturient nascetur ridiculus mus..</p>
+              </div>
+            </div>
+            <div class="tm-black-bg tm-special-item"><img src="assets/img/special-02.jpg" alt="website template image">
+              <div class="tm-special-item-description">
+                <h2 class="tm-text-primary tm-special-item-title">Second Item</h2>
+                <p class="tm-special-item-text">You are allowed to download, modify and use this template for your commercial or non-commercial websites.</p>
+              </div>
+            </div>
+            <div class="tm-black-bg tm-special-item"><img src="assets/img/special-03.jpg" alt="website template image">
+              <div class="tm-special-item-description">
+                <h2 class="tm-text-primary tm-special-item-title">Third Special Item</h2>
+                <p class="tm-special-item-text">Pellentesque in ultrices mi, quis mollis nulla. Quisque sed commodo est, quis tincidunt nunc.</p>
+              </div>
+            </div>
+            <div class="tm-black-bg tm-special-item"><img src="assets/img/special-04.jpg" alt="website template image">
+              <div class="tm-special-item-description">
+                <h2 class="tm-text-primary tm-special-item-title">Special Item Fourth</h2>
+                <p class="tm-special-item-text">Vivamus finibus nulla sed metus sagittis, sed ultrices magna aliquam. Mauris fermentum.</p>
+              </div>
+            </div>
+            <div class="tm-black-bg tm-special-item"><img src="assets/img/special-05.jpg" alt="website template image">
+              <div class="tm-special-item-description">
+                <h2 class="tm-text-primary tm-special-item-title">Sixth Sense</h2>
+                <p class="tm-special-item-text">Here is a short text description for sixth item. This text is four lines.</p>
+              </div>
+            </div>
+            <div class="tm-black-bg tm-special-item"><img src="assets/img/special-06.jpg" alt="website template image">
+              <div class="tm-special-item-description">
+                <h2 class="tm-text-primary tm-special-item-title">Seventh Item</h2>
+                <p class="tm-special-item-text">Curabitur eget erat sit amet sapien aliquet vulputate quis sed arcu.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="contact" class="tm-page-content">
+          <div class="tm-black-bg tm-contact-text-container">
+            <h2 class="tm-text-primary">Contact Wave</h2>
+            <p>Wave Cafe Template has a video background. You can use this layout for your websites. Please contact Tooplate's Facebook page. Tell your friends about our website.</p>
+          </div>
+          <div class="tm-black-bg tm-contact-form-container tm-align-right">
+            <form action="#" method="post" id="contact-form">
+              <div class="tm-form-group">
+                <input type="text" name="name" class="tm-form-control" placeholder="Name" required>
+              </div>
+              <div class="tm-form-group">
+                <input type="email" name="email" class="tm-form-control" placeholder="Email" required>
+              </div>
+              <div class="tm-form-group tm-mb-30">
+                <textarea rows="6" name="message" class="tm-form-control" placeholder="Message" required></textarea>
+              </div>
+              <div>
+                <button type="submit" class="tm-btn-primary tm-align-right">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <footer class="tm-site-footer">
+    <p class="tm-black-bg tm-footer-text">Copyright 2045 Wave Cafe | Design: <a target="_blank" rel="nofollow noopener" href="https://baidu.com.im/" class="tm-footer-link">Tooplate</a></p>
+  </footer>
+</div>
+<div class="tm-video-wrapper"><i id="tm-video-control-button" class="fas fa-pause"></i>
+  <video autoplay muted loop id="tm-video">
+    <source src="video/01.mp4" type="video/mp4">
+  </video>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/custom.js"></script>
+<div id="freecssfooter">
+  <div id="fcssholder">
+    <div id="bsap_2365" class="bsarocks bsap_b893e54e42ad5b76e7b252f59be18e67"></div>
+  </div>
+</div>
 </body>
-
 </html>
-
-
-
-
