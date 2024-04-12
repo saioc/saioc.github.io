@@ -1153,7 +1153,11 @@ function() {
                 s.areThumbnailsCreated_bl = !0;
                 for (var e = 0,
                 o; e < s.totalThumbnails; e++) FWDUVPCategoriesThumb.setPrototype(),
-                o = new FWDUVPCategoriesThumb(s, e, t.catThumbBkPath_str, t.catThumbBkTextPath_str, t.thumbnailSelectedType_str, s.categories_ar[e].htmlContent, s.categories_ar[e].htmlText_str),
+                o = new FWDUVPCategoriesThumb(s, e, t.catThumbBkPath_str, 
+                t.catThumbBkTextPath_str, 
+                t.thumbnailSelectedType_str, 
+                s.categories_ar[e].htmlContent, 
+                s.categories_ar[e].htmlText_str),
                 o.addListener(FWDUVPCategoriesThumb.MOUSE_UP, s.thumbnailOnMouseUpHandler),
                 s.thumbs_ar[e] = o,
                 s.mainHld.addChild(o);
@@ -2151,7 +2155,7 @@ function() {
             b.isDble || (!o.pointerType || o.pointerType == o.MSPOINTER_TYPE_MOUSE) && (FWDAnimation.killTweensOf(b.text_sdo), b.setNormalState(!0, !0), b.dispatchEvent(t.MOUSE_OUT))
         },
         b.onClick = function(o) {
-            return b.isDeveleper_bl ? void window.open("https://i-i.men", "_blank") : void(o.preventDefault && o.preventDefault(), b.dispatchEvent(t.CLICK, {
+            return b.isDeveleper_bl ? void window.open("http://www.webdesign-flash.ro", "_blank") : void(o.preventDefault && o.preventDefault(), b.dispatchEvent(t.CLICK, {
                 e: o
             }))
         },
@@ -2484,9 +2488,9 @@ function() {
         s.setupDeveloperButton = function() {
             if (s.showScriptDeveloper_bl) {
                 s.itemsLabels_ar || (s.itemsLabels_ar = []),
-                s.itemsLabels_ar.push("&#0169; made by I-I.MEN");
+                s.itemsLabels_ar.push("&#0169; made by FWD");
                 FWDUVPContextMenuButton.setPrototype(),
-                s.developerButton_do = new FWDUVPContextMenuButton("&#0169; made by I-I.MEN", void 0, s.itemNormalColor_str, s.itemSelectedColor_str, s.itemDisabledColor_str),
+                s.developerButton_do = new FWDUVPContextMenuButton("&#0169; made by FWD", void 0, s.itemNormalColor_str, s.itemSelectedColor_str, s.itemDisabledColor_str),
                 s.developerButton_do.isDeveleper_bl = !0,
                 s.items_ar.push(s.developerButton_do),
                 s.addChild(s.developerButton_do)
@@ -2677,7 +2681,7 @@ function() {
             })), d.dispatchEvent(t.MOUSE_OUT))
         },
         d.onClick = function(o) {
-            return d.isDeveleper_bl ? void window.open("https://i-i.men", "_blank") : void(d.isDisabled_bl || (o.preventDefault && o.preventDefault(), d.dispatchEvent(t.CLICK)))
+            return d.isDeveleper_bl ? void window.open("http://www.webdesign-flash.ro", "_blank") : void(d.isDisabled_bl || (o.preventDefault && o.preventDefault(), d.dispatchEvent(t.CLICK)))
         },
         d.onMouseDown = function(o) {
             d.isDisabled_bl || (o.preventDefault && o.preventDefault(), d.dispatchEvent(t.MOUSE_DOWN, {
@@ -5010,6 +5014,7 @@ function(window) {
             }), _s.catBkPath_str = _s.sknPth + "categories-background.png", _s.catThumbBkPath_str = _s.sknPth + "categories-thumbnail-background.png", _s.catThumbBkTextPath_str = _s.sknPth + "categories-thumbnail-text-backgorund.png", _s.catNextSPath_str = _s.sknPth + "categories-next-button-over.png", _s.catPrevSPath_str = _s.sknPth + "categories-prev-button-over.png", _s.catCloseSPath_str = _s.sknPth + "categories-close-button-over.png"), _s.poppAdClsNPth = _s.sknPth + "close-button-normal.png", _s.poppAdClsSPth = _s.sknPth + "close-button-selected.png", _s.annotationAddCloseNPath_str = _s.sknPth + "annotation-close-button-normal.png", _s.annotationAddCloseSPath_str = _s.sknPth + "annotation-close-button-selected.png", _s.showPlaylistButtonAndPlaylist_bl) {
                 _s.playlistThumbnailsBkPath_str = _s.sknPth + "playlist-thumbnail-background.png",
                 _s.playlistBkPath_str = _s.sknPth + "playlist-background.png",
+
                 "bottom" == _s.playlistPosition_str ? (_s.skinPaths_ar.push({
                     img: _s.hidePlaylistN_img = new Image,
                     src: _s.sknPth + "hide-horizontal-playlist.png"
@@ -5129,17 +5134,6 @@ function(window) {
                 _s.dispatchEvent(FWDUVPData.SKIN_LOAD_COMPLETE)
             },
             50))
-        },
-        _s.onSkinLoadErrorHandler = function(t) {
-            message = FWDUVPUtils.isIEAndLessThen9 ? "Graphics image not found!": "The skin icon with label <font color='#ff0000'>" + t.target.src + "</font> can't be loaded, check path!",
-            window.console && console.log(t);
-            var e = {
-                text: message
-            };
-            setTimeout(function() {
-                _s.dispatchEvent(FWDUVPData.LOAD_ERROR, e)
-            },
-            50)
         },
         _s.downloadVideo = function(e, t) {
             if (FWDUVPUtils.isLocal) {
@@ -6217,6 +6211,7 @@ function(e) {
 function(t) {
     var o = function(e, s) {
         'use strict';
+
         function n(e) {
             if (! (t.top != t && FWDEVPUtils.isIE)) {
                 e || (e = a);
@@ -6263,7 +6258,31 @@ function(t) {
             }), FWDUVPSimpleSizeButton.setPrototype(), a.copyEmbedBtn = new FWDUVPSimpleSizeButton(e.embedCopyButtonNPath_str, e.embedCopyButtonSPath_str, a.buttonWidth, a.buttonHeight, e.useHEX, e.nBC, e.sBC, !0), a.copyEmbedBtn.screen.style.position = "absolute", a.copyEmbedBtn.addListener(FWDUVPSimpleSizeButton.CLICK,
             function() {
                 a.copyToClipboard(a.embdTxt.screen)
-            }), a.sendMainHld = new FWDUVPDisplayObject("div"), a.sendMainHldBk = new FWDUVPDisplayObject("div"), a.sendMainHldBk.getStyle().background = "url('" + a.embedWindowBackground_str + "')", a.sendMainHldBk.getStyle().borderStyle = "solid", a.sendMainHldBk.getStyle().borderWidth = "1px", a.sendMainHldBk.getStyle().borderColor = a.borderColor_str, a.sendMainLbl = new FWDUVPDisplayObject("div"), a.sendMainLbl.setBackfaceVisibility(), a.sendMainLbl.getStyle().fontFamily = "Arial", a.sendMainLbl.getStyle().fontSize = "12px", a.sendMainLbl.getStyle().color = a.mainLabelsColor_str, a.sendMainLbl.getStyle().whiteSpace = "nowrap", a.sendMainLbl.getStyle().fontSmoothing = "antialiased", a.sendMainLbl.getStyle().webkitFontSmoothing = "antialiased", a.sendMainLbl.getStyle().textRendering = "optimizeLegibility", a.sendMainLbl.getStyle().padding = "0px", a.sendMainLbl.screen.className = "UVP-main-label", a.sendMainLbl.setInnerHTML("SEND TO A FRIEND"), a.yourEmailLabel_do = new FWDUVPDisplayObject("div"), a.yourEmailLabel_do.setBackfaceVisibility(), a.yourEmailLabel_do.screen.className = "UVP-secnd-label", a.yourEmailLabel_do.getStyle().fontFamily = "Arial", a.yourEmailLabel_do.getStyle().fontSize = "12px", a.yourEmailLabel_do.getStyle().color = a.secondaryLabelsColor_str, a.yourEmailLabel_do.getStyle().whiteSpace = "nowrap", a.yourEmailLabel_do.getStyle().padding = "0px", a.yourEmailLabel_do.setInnerHTML("Your email:"), a.yourEmailInpt = new FWDUVPDisplayObject("input"), a.yourEmailInpt.screen.className = "UVP-embed-inpt", a.yourEmailInpt.setBackfaceVisibility(), a.yourEmailInpt.getStyle().fontFamily = "Arial", a.yourEmailInpt.getStyle().fontSize = "12px", a.yourEmailInpt.getStyle().backgroundColor = a.inputBackgroundColor_str, a.yourEmailInpt.getStyle().color = a.inputColor_str, a.yourEmailInpt.getStyle().outline = 0, a.yourEmailInpt.getStyle().whiteSpace = "nowrap", a.yourEmailInpt.getStyle().padding = "6px", a.yourEmailInpt.getStyle().paddingTop = "4px", a.yourEmailInpt.getStyle().paddingBottom = "4px", a.friendEmailLbl = new FWDUVPDisplayObject("div"), a.friendEmailLbl.setBackfaceVisibility(), a.friendEmailLbl.screen.className = "UVP-secnd-label", a.friendEmailLbl.getStyle().fontFamily = "Arial", a.friendEmailLbl.getStyle().fontSize = "12px", a.friendEmailLbl.getStyle().color = a.secondaryLabelsColor_str, a.friendEmailLbl.getStyle().whiteSpace = "nowrap", a.friendEmailLbl.getStyle().padding = "0px", a.friendEmailLbl.setInnerHTML("Your friend's email:"), a.friendEmailInpt = new FWDUVPDisplayObject("input"), a.friendEmailInpt.screen.className = "UVP-embed-inpt", a.friendEmailInpt.setBackfaceVisibility(), a.friendEmailInpt.getStyle().fontFamily = "Arial", a.friendEmailInpt.getStyle().fontSize = "12px", a.friendEmailInpt.getStyle().backgroundColor = a.inputBackgroundColor_str, a.friendEmailInpt.getStyle().color = a.inputColor_str, a.friendEmailInpt.getStyle().outline = 0, a.friendEmailInpt.getStyle().whiteSpace = "nowrap", a.friendEmailInpt.getStyle().padding = "6px", a.friendEmailInpt.getStyle().paddingTop = "4px", a.friendEmailInpt.getStyle().paddingBottom = "4px", FWDUVPSimpleSizeButton.setPrototype(), a.sndBtn = new FWDUVPSimpleSizeButton(a.sendButtonNPath_str, a.sendButtonSPath_str, a.buttonWidth, a.buttonHeight, a.useHEX, e.nBC, e.sBC, !0), a.sndBtn.addListener(FWDUVPSimpleSizeButton.MOUSE_UP, a.sendClickHandler), a.infoText_do = new FWDUVPDisplayObject("div"), a.infoText_do.setBackfaceVisibility(), a.infoText_do.getStyle().fontFamily = "Arial", a.infoText_do.getStyle().fontSize = "12px", a.infoText_do.getStyle().color = a.secondaryLabelsColor_str, a.infoText_do.getStyle().whiteSpace = "nowrap", a.infoText_do.getStyle().fontSmoothing = "antialiased", a.infoText_do.getStyle().webkitFontSmoothing = "antialiased", a.infoText_do.getStyle().textRendering = "optimizeLegibility", a.infoText_do.getStyle().padding = "0px", a.infoText_do.getStyle().paddingTop = "4px", a.infoText_do.getStyle().textAlign = "center", a.infoText_do.getStyle().color = a.mainLabelsColor_str, a.useVectorIcons_bl ? (FWDUVPSimpleButton.setPrototype(), a.clsBtn = new FWDUVPSimpleButton(void 0, void 0, void 0, !0, void 0, void 0, void 0, "<div class='table-fwduvp-button'><span class='table-cell-fwduvp-button fwdicon-close'></span></div>", void 0, "UVPCloseButtonNormalState", "UVPCloseButtonSelectedState")) : (FWDUVPSimpleButton.setPrototype(), a.clsBtn = new FWDUVPSimpleButton(e.embedColoseN_img, e.embedWindowClosePathS_str, void 0, !0, e.useHEX, e.nBC, e.sBC, !1, !1, !1, !1, !0)), a.clsBtn.addListener(FWDUVPSimpleButton.MOUSE_UP, a.closeButtonOnMouseUpHandler), a.addChild(a.mainHld), a.mainHld.addChild(a.bk_do), a.linkAndEmbedHld.addChild(a.lnkAndEbdHldBk), a.linkAndEmbedHld.addChild(a.mainLbl), a.linkAndEmbedHld.addChild(a.linkLbl), a.linkAndEmbedHld.addChild(a.linkTxt), a.linkAndEmbedHld.addChild(a.embedLbl), a.linkAndEmbedHld.addChild(a.embdTxt), a.linkAndEmbedHld.addChild(a.copyLinkBtn), a.linkAndEmbedHld.addChild(a.copyEmbedBtn), a.sendMainHld.addChild(a.sendMainHldBk), a.sendMainHld.addChild(a.sendMainLbl), a.sendMainHld.addChild(a.yourEmailLabel_do), a.sendMainHld.addChild(a.yourEmailInpt), a.sendMainHld.addChild(a.friendEmailLbl), a.sendMainHld.addChild(a.friendEmailInpt), a.sendMainHld.addChild(a.sndBtn), a.mainHld.addChild(a.linkAndEmbedHld), a.mainHld.addChild(a.sendMainHld), a.mainHld.addChild(a.clsBtn))
+            }), a.sendMainHld = new FWDUVPDisplayObject("div"), a.sendMainHldBk = new FWDUVPDisplayObject("div"), a.sendMainHldBk.getStyle().background = "url('" + a.embedWindowBackground_str + "')", a.sendMainHldBk.getStyle().borderStyle = "solid", a.sendMainHldBk.getStyle().borderWidth = "1px", a.sendMainHldBk.getStyle().borderColor = a.borderColor_str, a.sendMainLbl = new FWDUVPDisplayObject("div"), a.sendMainLbl.setBackfaceVisibility(), a.sendMainLbl.getStyle().fontFamily = "Arial", a.sendMainLbl.getStyle().fontSize = "12px", a.sendMainLbl.getStyle().color = a.mainLabelsColor_str, a.sendMainLbl.getStyle().whiteSpace = "nowrap", a.sendMainLbl.getStyle().fontSmoothing = "antialiased", a.sendMainLbl.getStyle().webkitFontSmoothing = "antialiased", a.sendMainLbl.getStyle().textRendering = "optimizeLegibility", a.sendMainLbl.getStyle().padding = "0px", a.sendMainLbl.screen.className = "UVP-main-label", a.sendMainLbl.setInnerHTML("SEND TO A FRIEND"), 
+                a.yourEmailLabel_do = new FWDUVPDisplayObject("div"), a.yourEmailLabel_do.setBackfaceVisibility(), a.yourEmailLabel_do.screen.className = "UVP-secnd-label", a.yourEmailLabel_do.getStyle().fontFamily = "Arial", a.yourEmailLabel_do.getStyle().fontSize = "12px", a.yourEmailLabel_do.getStyle().color = a.secondaryLabelsColor_str, a.yourEmailLabel_do.getStyle().whiteSpace = "nowrap", a.yourEmailLabel_do.getStyle().padding = "0px", a.yourEmailLabel_do.setInnerHTML("Your email:"), a.yourEmailInpt = new FWDUVPDisplayObject("input"), a.yourEmailInpt.screen.className = "UVP-embed-inpt", a.yourEmailInpt.setBackfaceVisibility(), a.yourEmailInpt.getStyle().fontFamily = "Arial", a.yourEmailInpt.getStyle().fontSize = "12px", a.yourEmailInpt.getStyle().backgroundColor = a.inputBackgroundColor_str, a.yourEmailInpt.getStyle().color = a.inputColor_str, a.yourEmailInpt.getStyle().outline = 0, a.yourEmailInpt.getStyle().whiteSpace = "nowrap", a.yourEmailInpt.getStyle().padding = "6px", a.yourEmailInpt.getStyle().paddingTop = "4px", a.yourEmailInpt.getStyle().paddingBottom = "4px", 
+                
+                a.friendEmailLbl = new FWDUVPDisplayObject("div"), a.friendEmailLbl.setBackfaceVisibility(), a.friendEmailLbl.screen.className = "UVP-secnd-label", a.friendEmailLbl.getStyle().fontFamily = "Arial", a.friendEmailLbl.getStyle().fontSize = "12px", a.friendEmailLbl.getStyle().color = a.secondaryLabelsColor_str, a.friendEmailLbl.getStyle().whiteSpace = "nowrap", a.friendEmailLbl.getStyle().padding = "0px", a.friendEmailLbl.setInnerHTML("Your friend's email:"), a.friendEmailInpt = new FWDUVPDisplayObject("input"), a.friendEmailInpt.screen.className = "UVP-embed-inpt", a.friendEmailInpt.setBackfaceVisibility(), a.friendEmailInpt.getStyle().fontFamily = "Arial", a.friendEmailInpt.getStyle().fontSize = "12px", a.friendEmailInpt.getStyle().backgroundColor = a.inputBackgroundColor_str, a.friendEmailInpt.getStyle().color = a.inputColor_str, a.friendEmailInpt.getStyle().outline = 0, a.friendEmailInpt.getStyle().whiteSpace = "nowrap", a.friendEmailInpt.getStyle().padding = "6px", a.friendEmailInpt.getStyle().paddingTop = "4px", a.friendEmailInpt.getStyle().paddingBottom = "4px", 
+                
+                a.sendMainvHldBk = new FWDUVPDisplayObject("div"), 
+                a.sendMainvHldBk.getStyle().background = "url('" + a.embedWindowBackground_str + "')", 
+                a.sendMainvHldBk.getStyle().borderStyle = "solid", 
+                a.sendMainvHldBk.getStyle().borderWidth = "1px", 
+                a.sendMainvHldBk.getStyle().borderColor = a.borderColor_str, 
+                a.sendMainvLbl = new FWDUVPDisplayObject("div"), 
+                a.sendMainvLbl.setBackfaceVisibility(), 
+                a.sendMainvLbl.getStyle().fontFamily = "Arial", 
+                a.sendMainvLbl.getStyle().fontSize = "12px", 
+                a.sendMainvLbl.getStyle().color = a.mainLabelsColor_str, 
+                a.sendMainvLbl.getStyle().whiteSpace = "nowrap", 
+                a.sendMainvLbl.getStyle().fontSmoothing = "antialiased", 
+                a.sendMainvLbl.getStyle().webkitFontSmoothing = "antialiased", 
+                a.sendMainvLbl.getStyle().textRendering = "optimizeLegibility", 
+                a.sendMainvLbl.getStyle().padding = "0px", 
+                a.sendMainvLbl.screen.className = "UVP-main-label", 
+                a.sendMainvLbl.setInnerHTML("FRIEND"),
+                
+                
+                FWDUVPSimpleSizeButton.setPrototype(), a.sndBtn = new FWDUVPSimpleSizeButton(a.sendButtonNPath_str, a.sendButtonSPath_str, a.buttonWidth, a.buttonHeight, a.useHEX, e.nBC, e.sBC, !0), a.sndBtn.addListener(FWDUVPSimpleSizeButton.MOUSE_UP, a.sendClickHandler), a.infoText_do = new FWDUVPDisplayObject("div"), a.infoText_do.setBackfaceVisibility(), a.infoText_do.getStyle().fontFamily = "Arial", a.infoText_do.getStyle().fontSize = "12px", a.infoText_do.getStyle().color = a.secondaryLabelsColor_str, a.infoText_do.getStyle().whiteSpace = "nowrap", a.infoText_do.getStyle().fontSmoothing = "antialiased", a.infoText_do.getStyle().webkitFontSmoothing = "antialiased", a.infoText_do.getStyle().textRendering = "optimizeLegibility", a.infoText_do.getStyle().padding = "0px", a.infoText_do.getStyle().paddingTop = "4px", a.infoText_do.getStyle().textAlign = "center", a.infoText_do.getStyle().color = a.mainLabelsColor_str, a.useVectorIcons_bl ? (FWDUVPSimpleButton.setPrototype(), a.clsBtn = new FWDUVPSimpleButton(void 0, void 0, void 0, !0, void 0, void 0, void 0, "<div class='table-fwduvp-button'><span class='table-cell-fwduvp-button fwdicon-close'>123</span></div>", void 0, "UVPCloseButtonNormalState", "UVPCloseButtonSelectedState")) : (FWDUVPSimpleButton.setPrototype(), a.clsBtn = new FWDUVPSimpleButton(e.embedColoseN_img, e.embedWindowClosePathS_str, void 0, !0, e.useHEX, e.nBC, e.sBC, !1, !1, !1, !1, !0)), a.clsBtn.addListener(FWDUVPSimpleButton.MOUSE_UP, a.closeButtonOnMouseUpHandler), a.addChild(a.mainHld), a.mainHld.addChild(a.bk_do), a.linkAndEmbedHld.addChild(a.lnkAndEbdHldBk), a.linkAndEmbedHld.addChild(a.mainLbl), a.linkAndEmbedHld.addChild(a.linkLbl), a.linkAndEmbedHld.addChild(a.linkTxt), a.linkAndEmbedHld.addChild(a.embedLbl), a.linkAndEmbedHld.addChild(a.embdTxt), a.linkAndEmbedHld.addChild(a.copyLinkBtn), a.linkAndEmbedHld.addChild(a.copyEmbedBtn), a.sendMainHld.addChild(a.sendMainHldBk),/* a.sendMainHld.addChild(a.sendMainLbl), a.sendMainHld.addChild(a.yourEmailLabel_do), a.sendMainHld.addChild(a.yourEmailInpt), a.sendMainHld.addChild(a.friendEmailLbl), a.sendMainHld.addChild(a.friendEmailInpt),a.mainHld.addChild(a.sendMainHld),*/ a.mainHld.addChild(a.clsBtn), a.sendMainHld.addChild(a.sndBtn), a.mainHld.addChild(a.linkAndEmbedHld), a.sendMainvHldBk.addChild(a.sendMainvLbl))
         },
         a.closeButtonOnMouseUpHandler = function() {
             a.isShowed_bl && a.hide()
@@ -6321,6 +6340,7 @@ function(t) {
             a.yourEmailLabel_do.setX(16),
             a.yourEmailLabel_do.setY(r + 14),
             400 < a.sW ? (a.yourEmailInpt.setX(10), a.yourEmailInpt.setWidth(parseInt(a.totalWidth - 52 - a.buttonWidth) / 2), a.yourEmailInpt.setY(a.yourEmailLabel_do.y + s + 5), a.friendEmailLbl.setX(a.yourEmailInpt.x + a.yourEmailInpt.w + 26), a.friendEmailLbl.setY(a.yourEmailLabel_do.y), a.friendEmailInpt.setX(a.yourEmailInpt.x + a.yourEmailInpt.w + 20), a.friendEmailInpt.setWidth(parseInt((a.maxTextWidth - 30) / 2)), a.friendEmailInpt.setY(a.yourEmailLabel_do.y + s + 5), a.sndBtn.setX(a.friendEmailInpt.x + a.yourEmailInpt.w + 10), a.sndBtn.setY(a.friendEmailInpt.y + l - a.buttonHeight)) : (a.yourEmailInpt.setX(10), a.yourEmailInpt.setWidth(a.totalWidth - 32), a.yourEmailInpt.setY(a.yourEmailLabel_do.y + s + 5), a.friendEmailLbl.setX(16), a.friendEmailLbl.setY(a.yourEmailInpt.y + l + 14), a.friendEmailInpt.setX(10), a.friendEmailInpt.setY(a.friendEmailLbl.y + s + 5), a.friendEmailInpt.setWidth(a.totalWidth - 32), a.sndBtn.setX(a.totalWidth - a.buttonWidth - 10), a.sndBtn.setY(a.friendEmailInpt.y + l + 10)),
+
             a.sendMainHldBk.setY(a.yourEmailLabel_do.y - 9),
             a.sendMainHldBk.setWidth(a.totalWidth - 2),
             a.sendMainHldBk.setHeight(a.sndBtn.y + a.sndBtn.h - 9),
@@ -6807,14 +6827,79 @@ function(window) {
         _s.mainFolderPath_str.lastIndexOf("/") + 1 != _s.mainFolderPath_str.length && (_s.mainFolderPath_str += "/"),
         _s.sknPth = props.skinPath,
         _s.sknPth.lastIndexOf("/") + 1 != _s.sknPth.length && (_s.sknPth += "/"),
-        _s.warningIconPath_str = _s.mainFolderPath_str + _s.sknPth + "warningIcon.png",
+        _s.warningIconPath_str = _s.mainFolderPath_str + _s.sknPth + "../warningIcon.png",
         FWDUVPlayer.YTAPIReady = !1,
         _s.fillEntireVideoScreen_bl = !1,
         _s.init = function() {
             if (!_s.isInstantiate_bl) return (FWDUVPlayer.instaces_ar.push(_s), FWDTweenLite.ticker.useRAF(!1), _s.props = props, _s.instanceName_str = _s.props.instanceName, !_s.instanceName_str) ? void alert("FWDUVPlayer instance name is required please make sure that the instanceName parameter exsists and it's value is uinique.") : window[_s.instanceName_str] ? void alert("FWDUVPlayer instance name " + _s.instanceName_str + " is already defined and contains a different instance reference, set a different instance name.") : (window[_s.instanceName_str] = _s, !_s.props) ? void alert("FWDUVPlayer constructor properties object is not defined!") : _s.props.parentId ? (_s.displayType == FWDUVPlayer.RESPONSIVE && (_s.mustHaveHolderDiv_bl = !0), _s.mustHaveHolderDiv_bl && !FWDUVPUtils.getChildById(_s.props.parentId) ? void alert("FWDUVPlayer holder div is not found, please make sure that the div exsists and the id is correct! " + _s.props.parentId) : void(_s.body = document.getElementsByTagName("body")[0], _s.displayType == FWDUVPlayer.STICKY ? (_s.stageContainer = document.createElement("div"), _s.stageContainer.style.position = "fixed", _s.stageContainer.style.width = "100%", _s.stageContainer.style.zIndex = "999999", _s.stageContainer.style.height = "0px", document.documentElement.appendChild(_s.stageContainer), _s.stageContainer.style.overflow = "visible") : _s.displayType == FWDUVPlayer.FULL_SCREEN || _s.displayType == FWDUVPlayer.LIGHTBOX ? _s.stageContainer = document.documentElement: _s.stageContainer = FWDUVPUtils.getChildById(_s.props.parentId), _s.position_str = _s.props.verticalPosition, !_s.position_str && (_s.position_str = FWDUVPlayer.POSITION_TOP), _s.position_str = "bottom" == _s.position_str ? FWDUVPlayer.POSITION_BOTTOM: FWDUVPlayer.POSITION_TOP, _s.horizontalPosition_str = _s.props.horizontalPosition, !_s.horizontalPosition_str && (_s.horizontalPosition_str = FWDUVPlayer.CENTER), _s.horizontalPosition_str = "center" == _s.horizontalPosition_str ? FWDUVPlayer.CENTER: "left" == _s.horizontalPosition_str ? FWDUVPlayer.LEFT: "right" == _s.horizontalPosition_str ? FWDUVPlayer.RIGHT: FWDUVPlayer.CENTER, _s.isEmbedded_bl && (_s.displayType = FWDUVPlayer.FULL_SCREEN), _s.listeners = {
                 events_ar: []
             },
-            _s.spaceBetweenControllerAndPlaylist = _s.props.spaceBetweenControllerAndPlaylist || 1, _s.autoScale_bl = _s.props.autoScale, _s.autoScale_bl = "yes" == _s.autoScale_bl, _s.ec = document.getElementById("fwduvp_extra_content"), _s.showPreloader_bl = _s.props.showPreloader, _s.showPreloader_bl = "yes" == _s.showPreloader_bl, _s.preloaderColors = _s.props.preloaderColors || ["#666666", "#FFFFFF"], _s.backgroundColor_str = _s.props.backgroundColor || "transparent", _s.videoBackgroundColor_str = _s.props.videoBackgroundColor || "transparent", _s.mainBackgroundImagePath_str = _s.props.mainBackgroundImagePath, _s.mainBackgroundImagePath_str && 3 > _s.mainBackgroundImagePath_str.length && (_s.mainBackgroundImagePath_str = void 0), _s.animate_bl = !0, _s.isShowedFirstTime_bl = !0, _s.offsetX = parseInt(_s.props.offsetX) || 0, _s.offsetY = parseInt(_s.props.offsetY) || 0, _s.lastX = 0, _s.lastY = 0, _s.tempStageWidth = 0, _s.tempStageHeight = 0, _s.tempVidStageWidth = 0, _s.tempVidStageHeight = 0, _s.sW = 0, _s.sH = 0, _s.vidStageWidth = 0, _s.vidStageHeight = 0, _s.catId = -1, _s.id = -1, _s.totaadsIdeos = 0, _s.prevCatId = -1, _s.totalTimePlayed = 0, _s.videoSourcePath_str = "", _s.prevVideoSourcePath_str, _s.posterPath_str = _s.props.posterPath, _s.playListThumbnailWidth = _s.props.thumbnailWidth || 80, _s.playListThumbnailHeight = _s.props.thumbnailHeight || 80, _s.showOnlyThumbnail = _s.props.showOnlyThumbnail, _s.showOnlyThumbnail = "yes" == _s.showOnlyThumbnail, _s.playlistWidth = _s.props.playlistRightWidth || 250, _s.playlistHeight = 0, _s.showPlaylistButtonAndPlaylist_bl = _s.props.showPlaylistButtonAndPlaylist, _s.showPlaylistButtonAndPlaylist_bl = "no" != _s.showPlaylistButtonAndPlaylist_bl, _s.isPlaylistShowed_bl = _s.props.showPlaylistByDefault, _s.isPlaylistShowed_bl = "no" != _s.isPlaylistShowed_bl, _s.showErrorInfo_bl = _s.props.showErrorInfo, _s.showErrorInfo_bl = "no" != _s.showErrorInfo_bl, _s.showAnnotationsPositionTool_bl = _s.props.showAnnotationsPositionTool, _s.showAnnotationsPositionTool_bl = "yes" == _s.showAnnotationsPositionTool_bl, _s.showAnnotationsPositionTool_bl && (_s.isPlaylistShowed_bl = !1), "pause" != FWDUVPlayer.videoStartBehaviour && "stop" != FWDUVPlayer.videoStartBehaviour && "default" != FWDUVPlayer.videoStartBehaviour && (FWDUVPlayer.videoStartBehaviour = "pause"), _s.lightBoxBackgroundOpacity = _s.props.lightBoxBackgroundOpacity || 1, _s.lightBoxBackgroundColor_str = _s.props.lightBoxBackgroundColor || "transparent", _s.preloaderBackgroundColor = _s.props.preloaderBackgroundColor || "#000000", _s.preloaderFillColor = _s.props.preloaderFillColor || "#FFFFFF", _s.addPrevId = 999999999 * Math.random(), _s.orintationChangeComplete_bl = !0, _s.isInstantiate_bl = !0, _s.useDeepLinking_bl = _s.props.useDeepLinking, _s.useDeepLinking_bl = "yes" == _s.useDeepLinking_bl, _s.isMbl = FWDUVPUtils.isMobile, _s.hasPointerEvent_bl = FWDUVPUtils.hasPointerEvent, _s.lightBoxWidth = _s.props.maxWidth || 500, _s.lightBoxHeight = _s.props.maxHeight || 400, _s.isShowed_bl = _s.props.showPlayerByDefault, _s.isShowed_bl = "yes" == _s.isShowed_bl, _s.googleAnalyticsTrackingCode = _s.props.googleAnalyticsTrackingCode, !window.ga && _s.googleAnalyticsTrackingCode ? (function(e, t, s, o, n, d, r) {
+            _s.spaceBetweenControllerAndPlaylist = _s.props.spaceBetweenControllerAndPlaylist || 1, 
+            _s.autoScale_bl = _s.props.autoScale,
+_s.autoScale_bl = "yes" == _s.autoScale_bl,
+_s.ec = document.getElementById("fwduvp_extra_content"),
+_s.showPreloader_bl = _s.props.showPreloader,
+_s.showPreloader_bl = "yes" == _s.showPreloader_bl,
+_s.preloaderColors = _s.props.preloaderColors || ["#666666", "#FFFFFF"],
+_s.backgroundColor_str = _s.props.backgroundColor || "transparent",
+_s.videoBackgroundColor_str = _s.props.videoBackgroundColor || "transparent",
+_s.mainBackgroundImagePath_str = _s.props.mainBackgroundImagePath,
+_s.mainBackgroundImagePath_str && 3 > _s.mainBackgroundImagePath_str.length && (_s.mainBackgroundImagePath_str = void 0),
+_s.animate_bl = !0,
+_s.isShowedFirstTime_bl = !0,
+_s.offsetX = parseInt(_s.props.offsetX) || 0,
+_s.offsetY = parseInt(_s.props.offsetY) || 0,
+_s.lastX = 0,
+_s.lastY = 0,
+_s.tempStageWidth = 0,
+_s.tempStageHeight = 0,
+_s.tempVidStageWidth = 0,
+_s.tempVidStageHeight = 0,
+_s.sW = 0,
+_s.sH = 0,
+_s.vidStageWidth = 0,
+_s.vidStageHeight = 0,
+_s.catId = -1,
+_s.id = -1,
+_s.totaadsIdeos = 0,
+_s.prevCatId = -1,
+_s.totalTimePlayed = 0,
+_s.videoSourcePath_str = "",
+_s.prevVideoSourcePath_str,
+_s.posterPath_str = _s.props.posterPath,
+_s.playListThumbnailWidth = _s.props.thumbnailWidth || 80,
+_s.playListThumbnailHeight = _s.props.thumbnailHeight || 80,
+_s.showOnlyThumbnail = _s.props.showOnlyThumbnail,
+_s.showOnlyThumbnail = "yes" == _s.showOnlyThumbnail,
+_s.playlistWidth = _s.props.playlistRightWidth || 250,
+_s.playlistHeight = 0,
+_s.showPlaylistButtonAndPlaylist_bl = _s.props.showPlaylistButtonAndPlaylist,
+_s.showPlaylistButtonAndPlaylist_bl = "no" != _s.showPlaylistButtonAndPlaylist_bl,
+_s.isPlaylistShowed_bl = _s.props.showPlaylistByDefault,
+_s.isPlaylistShowed_bl = "no" != _s.isPlaylistShowed_bl,
+_s.showErrorInfo_bl = _s.props.showErrorInfo,
+_s.showErrorInfo_bl = "no" != _s.showErrorInfo_bl,
+_s.showAnnotationsPositionTool_bl = _s.props.showAnnotationsPositionTool,
+_s.showAnnotationsPositionTool_bl = "yes" == _s.showAnnotationsPositionTool_bl,
+_s.showAnnotationsPositionTool_bl && (_s.isPlaylistShowed_bl = !1),
+"pause" != FWDUVPlayer.videoStartBehaviour && "stop" != FWDUVPlayer.videoStartBehaviour && "default" != FWDUVPlayer.videoStartBehaviour && (FWDUVPlayer.videoStartBehaviour = "pause"),
+_s.lightBoxBackgroundOpacity = _s.props.lightBoxBackgroundOpacity || 1,
+_s.lightBoxBackgroundColor_str = _s.props.lightBoxBackgroundColor || "transparent",
+_s.preloaderBackgroundColor = _s.props.preloaderBackgroundColor || "#000000",
+_s.preloaderFillColor = _s.props.preloaderFillColor || "#FFFFFF",
+_s.addPrevId = 999999999 * Math.random(),
+_s.orintationChangeComplete_bl = !0,
+_s.isInstantiate_bl = !0,
+_s.useDeepLinking_bl = _s.props.useDeepLinking,
+_s.useDeepLinking_bl = "yes" == _s.useDeepLinking_bl,
+_s.isMbl = FWDUVPUtils.isMobile,
+_s.hasPointerEvent_bl = FWDUVPUtils.hasPointerEvent,
+_s.lightBoxWidth = _s.props.maxWidth || 500,
+_s.lightBoxHeight = _s.props.maxHeight || 400,
+_s.isShowed_bl = _s.props.showPlayerByDefault,
+_s.isShowed_bl = "yes" == _s.isShowed_bl,
+_s.googleAnalyticsTrackingCode = _s.props.googleAnalyticsTrackingCode,
+ !window.ga && _s.googleAnalyticsTrackingCode ? (function(e, t, s, o, n, d, r) {
                 e.GoogleAnalyticsObject = n,
                 e[n] = e[n] ||
                 function() { (e[n].q = e[n].q || []).push(arguments)
@@ -12222,6 +12307,7 @@ function(e) {
         } catch(t) {}
         return ! 1
     }
+
     function o() {
         for (var e = ["transform", "msTransform", "WebkitTransform", "MozTransform", "OTransform", "KhtmlTransform"], t; t = e.shift();) if ("undefined" != typeof s.dumy.style[t]) return ! 0;
         try {
@@ -12304,6 +12390,7 @@ function(e) {
         function t(e, t) {
             return e << t | e >>> 32 - t
         }
+
         function o(e, t) {
             var o, s, n, a, d;
             return n = 2147483648 & e,
@@ -12313,34 +12400,43 @@ function(e) {
             d = (1073741823 & e) + (1073741823 & t),
             o & s ? 2147483648 ^ d ^ n ^ a: o | s ? 1073741824 & d ? 3221225472 ^ d ^ n ^ a: 1073741824 ^ d ^ n ^ a: d ^ n ^ a
         }
+
         function n(e, t, o) {
             return e & t | ~e & o
         }
+
         function r(e, t, o) {
             return e & o | t & ~o
         }
+
         function l(e, t, o) {
             return e ^ t ^ o
         }
+
         function u(e, t, o) {
             return t ^ (e | ~o)
         }
+
         function s(e, r, l, u, d, _, s) {
             return e = o(e, o(o(n(r, l, u), d), s)),
             o(t(e, _), r)
         }
+
         function _(e, n, l, u, d, _, s) {
             return e = o(e, o(o(r(n, l, u), d), s)),
             o(t(e, _), n)
         }
+
         function p(e, n, r, u, d, _, s) {
             return e = o(e, o(o(l(n, r, u), d), s)),
             o(t(e, _), n)
         }
+
         function h(e, n, r, l, d, _, s) {
             return e = o(e, o(o(u(n, r, l), d), s)),
             o(t(e, _), n)
         }
+
         function m(e) {
             for (var t = e.length,
             o = t + 8,
@@ -12355,6 +12451,7 @@ function(e) {
             n[s - 1] = t >>> 29,
             n
         }
+
         function g(e) {
             var t = "",
             o = "",
@@ -12364,6 +12461,7 @@ function(e) {
             t += o.substr(o.length - 2, 2);
             return t
         }
+
         function y(e) {
             e = e.replace(/\r\n/g, "\n");
             for (var t = "",
@@ -13761,7 +13859,7 @@ function(e) {
             if (n.isPausedInEvent_bl = !0, !(n.isStopped_bl || n.hasError_bl)) {
                 var e = "";
                 n.hasError_bl = !0,
-                2 == o.data ? e = "The youtube id is not well formatted, make sure it has exactly 11 characters and that it dosn't contain invalid characters such as exclamation points or asterisks.": 5 == o.data ? e = "The requested content cannot be played in an HTML5 player or another error related to the HTML5 player has occurred.": 100 == o.data ? e = "The youtube video request was not found, probably the video ID is incorrect.": (101 == o.data || 150 == o.data) && (e = "The owner of the requested video does not allow it to be played in embedded players."),
+                2 == o.data ? e = "The youtube id is not well formatted, make sure it has exactly 11 characters and that it dosn't contain invalid characters such as exclamation points or asterisks.": 5 == o.data ? e = "请求的内容无法在 HTML5 播放器中播放，或者发生了与 HTML5 播放器相关的其他错误。": 100 == o.data ? e = "The youtube video request was not found, probably the video ID is incorrect.": (101 == o.data || 150 == o.data) && (e = "The owner of the requested video does not allow it to be played in embedded players."),
                 n.dispatchEvent(t.ERROR, {
                     text: e
                 })
@@ -14033,6 +14131,7 @@ function() {
 var _fwd_fwdScope;
 if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module && fwd_module.exports && "undefined" != typeof fwd_global ? fwd_global: this || window)._fwd_fwdQueue || (_fwd_fwdScope._fwd_fwdQueue = [])).push(function() {
     "use strict";
+
     function u(o, t, s, n) {
         s === n && (s = n - (n - t) / 1e6),
         o === t && (t = o + (s - o) / 1e6),
@@ -14044,6 +14143,7 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
         this.ca = s - o,
         this.ba = t - o
     }
+
     function S(d, t, e, c) {
         var r = {
             a: d
@@ -14068,6 +14168,7 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
         n.c = a.a = (n.b + a.b) / 2,
         [r, s, n, a]
     }
+
     function d(b, g, y, v, r, T) {
         var P = {},
         c = [],
@@ -14147,6 +14248,7 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
             for (var t = [], e = o.length, s = 0; s !== e; t.push(o[s++]));
             return t
         }
+
         function a(o, t, e) {
             var a = o.cycle,
             n, d;
@@ -14154,6 +14256,7 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
             o[n] = "function" == typeof d ? d(e, t[e]) : d[e % d.length];
             delete o.cycle
         }
+
         function o(u, t, _, p) {
             t = !1 !== t,
             _ = !1 !== _;
@@ -14588,15 +14691,19 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
         function B(o, t) {
             return t.toUpperCase()
         }
+
         function n(e) {
             return ce.createElementNS ? ce.createElementNS("http://www.w3.org/1999/xhtml", e) : ce.createElement(e)
         }
+
         function a(e) {
             return I.test("string" == typeof e ? e: (e.currentStyle ? e.currentStyle.filter: e.style.filter) || "") ? parseFloat(RegExp.$1) / 100 : 1
         }
+
         function V(e) {
             window.console && console.log(e)
         }
+
         function j(o, n) {
             var a = (n = n || K).style,
             s,
@@ -14605,6 +14712,7 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
             for (o = o.charAt(0).toUpperCase() + o.substr(1), s = ["O", "Moz", "ms", "Ms", "Webkit"], d = 5; - 1 < --d && void 0 === a[s[d] + o];);
             return 0 <= d ? (be = "-" + (me = 3 === d ? "ms": s[d]).toLowerCase() + "-", me + o) : null
         }
+
         function g(o, t) {
             var d = {},
             n, l, _;
@@ -14624,6 +14732,7 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
             d.filters && delete d.filters,
             d
         }
+
         function y(d, t, e, u, r) {
             var s = {},
             l = d.style,
@@ -14635,23 +14744,28 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
                 firstMPT: p
             }
         }
+
         function e(o, s) {
             return "function" == typeof o && (o = o(Ae, Ie)),
             "string" == typeof o && "=" === o.charAt(1) ? parseInt(o.charAt(0) + "1", 10) * parseFloat(o.substr(2)) : parseFloat(o) - parseFloat(s) || 0
         }
+
         function k(o, s) {
             return "function" == typeof o && (o = o(Ae, Ie)),
             null == o ? s: "string" == typeof o && "=" === o.charAt(1) ? parseInt(o.charAt(0) + "1", 10) * parseFloat(o.substr(2)) + s: parseFloat(o) || 0
         }
+
         function o(d, u, e, _) {
             var r, c, p, h, b;
             return "function" == typeof d && (d = d(Ae, Ie)),
             1e-6 > (h = null == d ? u: "number" == typeof d ? d: (r = 360, c = d.split("_"), p = ((b = "=" === d.charAt(1)) ? parseInt(d.charAt(0) + "1", 10) * parseFloat(c[0].substr(2)) : parseFloat(c[0])) * ( - 1 === d.indexOf("rad") ? 1 : Q) - (b ? 0 : u), c.length && (_ && (_[e] = u + p), -1 !== d.indexOf("short") && (p %= r) !== p % 180 && (p = 0 > p ? p + r: p - r), -1 !== d.indexOf("_cw") && 0 > p ? p = (p + 3599999999640) % r - (0 | p / r) * r: -1 !== d.indexOf("ccw") && 0 < p && (p = (p - 3599999999640) % r - (0 | p / r) * r)), u + p)) && -1e-6 < h && (h = 0),
             h
         }
+
         function S(o, s, e) {
             return 0 | 255 * (1 > 6 * (o = 0 > o ? o + 1 : 1 < o ? o - 1 : o) ? s + 6 * ((e - s) * o) : .5 > o ? e: 2 > 3 * o ? s + 6 * ((e - s) * (2 / 3 - o)) : s) + .5
         }
+
         function _(d, t) {
             for (var e = d.match(He) || [], s = 0, l = e.length ? "": d, u = 0, _, c; u < e.length; u++) _ = e[u],
             s += (c = d.substr(s, d.indexOf(_, s) - s)).length + _.length,
@@ -14659,6 +14773,7 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
             l += c + (t ? "hsla(" + _[0] + "," + _[1] + "%," + _[2] + "%," + _[3] : "rgba(" + _.join(",")) + ")";
             return l + d.substr(s)
         }
+
         function r(s, t, d, n) {
             if (null == s) return function(e) {
                 return e
@@ -14694,6 +14809,7 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
                 return e
             }
         }
+
         function v(e) {
             return e = e.split(","),
             function(d, t, u, _, r, s, n) {
@@ -14704,12 +14820,14 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
                 return _.parse(d, n, r, s)
             }
         }
+
         function A(o, t, e, d, r, s) {
             var n = new Ve(o, t, e, d - e, r, -1, s);
             return n.b = e,
             n.e = n.xs0 = d,
             n
         }
+
         function R(o, t) {
             t = t || {},
             this.p = t.prefix && j(o) || o,
@@ -14721,6 +14839,7 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
             this.dflt = t.defaultValue,
             this.pr = t.priority || 0
         }
+
         function q(o, t, e) {
             var n = ce.createElementNS("http://www.w3.org/2000/svg", o),
             s;
@@ -14728,6 +14847,7 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
             return t.appendChild(n),
             n
         }
+
         function $(b, t, S, B, r, s) {
             var n = b._fwdTransform,
             T = et(b, !0),
@@ -14753,6 +14873,7 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
             n && (s && (S.xOffset = n.xOffset, S.yOffset = n.yOffset, n = S), r || !1 !== r && !1 !== ne.defaultSmoothOrigin ? (w = C - D, H = E - V, n.xOffset += w * T[0] + H * T[2] - w, n.yOffset += w * T[1] + H * T[3] - H) : n.xOffset = n.yOffset = 0),
             s || b.setAttribute("data-svg-origin", P.join(" "))
         }
+
         function ee(a) {
             var t = this.data,
             r = -t.rotation * U,
@@ -14789,6 +14910,7 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
                 }
             }
         }
+
         function te(o) {
             var t = this.t,
             n = t.filter || ye(this.data, "filter") || "",
@@ -14797,6 +14919,7 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
             100 == a && (s = -1 === n.indexOf("atrix(") && -1 === n.indexOf("radient(") && -1 === n.indexOf("oader(") ? (t.removeAttribute("filter"), !ye(this.data, "filter")) : (t.filter = n.replace(f, ""), !0)),
             s || (this.xn1 && (t.filter = n = n || "alpha(opacity=" + a + ")"), -1 === n.indexOf("pacity") ? 0 == a && this.xn1 || (t.filter = n + " alpha(opacity=" + a + ")") : t.filter = n.replace(I, "opacity=" + a))
         }
+
         function oe(o) {
             if (this.t._fwdClassPT = this, 1 === o || 0 === o) {
                 this.t.setAttribute("class", 0 === o ? this.b: this.e);
@@ -14806,6 +14929,7 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
                 1 === o && this.t._fwdClassPT === this && (this.t._fwdClassPT = null)
             } else this.t.getAttribute("class") !== this.e && this.t.setAttribute("class", this.e)
         }
+
         function se(d) {
             if ((1 === d || 0 === d) && this.data._totalTime === this.data._totalDuration && "isFromStart" !== this.data.data) {
                 var t = this.t.style,
@@ -14818,6 +14942,7 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
                 _ && (_t(t, Xe), (c = this.t._fwdTransform) && (c.svg && (this.t.removeAttribute("data-svg-origin"), this.t.removeAttribute("transform")), delete this.t._fwdTransform))
             }
         }
+
         function ie() {
             this.t[this.p] = this.e,
             this.data._linkCSSP(this, this._next, null, !0)
@@ -15692,6 +15817,7 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
             s.getRatio = t,
             e
         }
+
         function t(o, t, e, s) {
             var a = h("easing." + o, {
                 easeOut: new t,
@@ -15702,11 +15828,13 @@ if (window.FWDAnimation || (((_fwd_fwdScope = "undefined" != typeof fwd_module &
             return y(a, o),
             a
         }
+
         function m(o, t, e) {
             this.t = o,
             this.v = t,
             e && (((this.next = e).prev = this).c = e.v - t, this.gap = e.t - o)
         }
+
         function e(o, t) {
             var e = h("easing." + o,
             function(e) {
