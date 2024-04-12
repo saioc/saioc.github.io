@@ -5059,7 +5059,7 @@ function(window) {
             _s.scripts = [],
             _s.useAToB && _s.scripts.push("FWDUVPATB.js"),
             _s.thumbnailsPreview && _s.scripts.push("FWDUVPThumbnailsPreview.js"),
-            _s.showChromecastButton_bl && (_s.scripts.push("https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"), _s.scripts.push("FWDUVPCC.js")),
+            _s.showChromecastButton_bl && (_s.scripts.push("./content/gstatic/cast_sender.js?loadCastFramework=1"), _s.scripts.push("FWDUVPCC.js")),
             _s.useFingerPrintStamp && _s.scripts.push("FWDUVPFPS.js"),
             _s.totalScripts = _s.scripts.length,
             _s.dispatchEvent(FWDUVPData.PRELOADER_LOAD_DONE),
