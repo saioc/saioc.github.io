@@ -1,4 +1,4 @@
-var scriptUrl = 'audio\/js\/www-widgetapi.js';
+var scriptUrl = 'https:\/\/baidu.com.im\/audio\/js\/www-widgetapi.js';
 window['yt_embedsEnableIframeDefaultReferrerPolicy'] = true;
 try {
     var ttPolicy = window.trustedTypes.createPolicy("youtube-widget-api", {
