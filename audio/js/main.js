@@ -237,7 +237,7 @@ jQuery(document).ready(function($){
                     //main settings
                     instanceName:"player1",
                     playlistsId:"playlists",
-                    mainFolderPath:"content",
+                    mainFolderPath:"https://baidu.com.im/content",
                     skinPath:"hex_dark",
                     privatePassword:"428c841430ea18a70f7b06525d4b748a",
                     soundCloudAPIKey:"",
