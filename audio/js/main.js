@@ -242,7 +242,7 @@ jQuery(document).ready(function($){
                     privatePassword:"428c841430ea18a70f7b06525d4b748a",
                     soundCloudAPIKey:"",
                     showSoundCloudUserNameInTitle:"yes",
-                    googleAnalyticsTrackingCode:"UA-122352201-1",
+                    googleAnalyticsTrackingCode:"",
                     youtubeAPIKey:"AIzaSyDSlt_s493a1dFkFQ2yQLT4RvNycIlS6So",
                     proxyCors:"",
                     showMainBackground:"no",
