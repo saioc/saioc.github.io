@@ -54,7 +54,7 @@ jQuery(document).ready(function($){
     // Player main bk.
     function initPlayerMainBk(){
     	var bk = $('.main-player .bk')[0];
-        var src = 'audio/main-player-bk.jpg';
+        var src = 'https://baidu.com.im/audio/main-player-bk.jpg';
         bk.src = src;
         bk.onload = function(){
             setTimeout(function(){
