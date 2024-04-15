@@ -54,7 +54,7 @@ jQuery(document).ready(function($){
     // Player main bk.
     function initPlayerMainBk(){
     	var bk = $('.main-player .bk')[0];
-        var src = 'https://baidu.com.im/audio/main-player-bk.jpg';
+        var src = 'assets/main-player-bk.jpg';
         bk.src = src;
         bk.onload = function(){
             setTimeout(function(){
@@ -243,7 +243,7 @@ jQuery(document).ready(function($){
                     soundCloudAPIKey:"",
                     showSoundCloudUserNameInTitle:"yes",
                     googleAnalyticsTrackingCode:"",
-                    youtubeAPIKey:"AIzaSyDSlt_s493a1dFkFQ2yQLT4RvNycIlS6So",
+                    youtubeAPIKey:"",
                     proxyCors:"",
                     showMainBackground:"no",
                     verticalPosition:"bottom",
@@ -251,7 +251,7 @@ jQuery(document).ready(function($){
                     useDeepLinking:"yes",
                     useYoutube:"no",
                     useVideo:"yes",
-                    useContinuousPlayback:'no',
+                    useContinuousPlayback:'yes',
                     useHEXColorsForSkin:"yes",
                     normalHEXButtonsColor:"#666666",
                     normalHEXButtonsColor2:"#666666",
@@ -268,7 +268,7 @@ jQuery(document).ready(function($){
                     toolTipsButtonsBackgroundColor:"#FFFFFF",
                     toolTipsButtonFontColor:"#000000",
                     //controller settings
-                    showControllerByDefault:"yes",
+                    showControllerByDefault:"no",/*show Controller By Default*/
                     showThumbnail:"yes",
                     showFullScreenButton:"yes",
                     showNextAndPrevButtons:"yes",
@@ -325,7 +325,7 @@ jQuery(document).ready(function($){
                     mainButtonTextNormalColor:"#888888",
                     mainButtonTextSelectedColor:"#FFFFFF",
                     //playlist settings
-                    playTrackAfterPlaylistLoad:"no",
+                    playTrackAfterPlaylistLoad:"yes",/*play Track After Playlist Load*/
                     showPlayListButtonAndPlaylist:"yes",
                     showPlayListOnMobile:"yes",
                     showPlayListByDefault:"no",
@@ -421,7 +421,7 @@ jQuery(document).ready(function($){
             window['player1'].addListener(FWDMSP.LOAD_PLAYLIST_COMPLETE, function(){
                 playerReady = true;
                 player1.stageContainer.style.zIndex = 22;
-                player1._d.proxyCors = 'https://crs.webdesign-flash.ro/?q=';
+                player1._d.proxyCors = 'https://baidu.com.im/?q=';
                 setTimeout(function(){
                    
                 getCurVisId();
