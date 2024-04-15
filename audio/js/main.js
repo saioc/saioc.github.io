@@ -259,7 +259,7 @@ jQuery(document).ready(function($){
                     showButtonsToolTips:"yes",
                     animate:"yes",
                     addKeyboardSupport:"yes",
-                    autoPlay:"no",
+                    autoPlay:"yes",
                     loop:"no",
                     shuffle:"no",
                     maxWidth:maxWidth,
