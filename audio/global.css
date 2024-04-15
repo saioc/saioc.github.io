@@ -1,0 +1,492 @@
+/* Player font. */
+@import url('https://fonts.Googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+
+/* Vector font. */
+@font-face {
+  font-family: 'fwdmsp-icon';
+  src:  url('fonts/fwdmsp-icon.eot?eug2v5');
+  src:  url('fonts/fwdmsp-icon.eot?eug2v5#iefix') format('embedded-opentype'),
+    url('fonts/fwdmsp-icon.ttf?eug2v5') format('truetype'),
+    url('fonts/fwdmsp-icon.woff?eug2v5') format('woff'),
+    url('fonts/fwdmsp-icon.svg?eug2v5#fwdmsp-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="fwdmsp-icon-"], [class*=" fwdmsp-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'fwdmsp-icon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="fwdmsp-icon-"], [class*=" fwdmsp-icon-"]:before {
+  position: relative;
+}
+
+.fwdmsp-icon-10:before {
+  content: "\e900";
+}
+.fwdmsp-icon-AB:before {
+  content: "\e901";
+}
+.fwdmsp-icon-basket:before {
+  content: "\e902";
+}
+.fwdmsp-icon-buffer:before {
+  content: "\e903";
+}
+.fwdmsp-icon-cart:before {
+  content: "\e904";
+}
+.fwdmsp-icon-close:before {
+  content: "\e905";
+}
+.fwdmsp-icon-digg:before {
+  content: "\e906";
+}
+.fwdmsp-icon-download:before {
+  content: "\e907";
+}
+.fwdmsp-icon-email:before {
+  content: "\e908";
+}
+.fwdmsp-icon-facebook:before {
+  content: "\e909";
+}
+.fwdmsp-icon-FF-left:before {
+  content: "\e90a";
+}
+.fwdmsp-icon-FF-right:before {
+  content: "\e90b";
+}
+.fwdmsp-icon-flikr:before {
+  content: "\e90c";
+}
+.fwdmsp-icon-fullscreen:before {
+  content: "\e90d";
+}
+.fwdmsp-icon-google-plus:before {
+  content: "\e90e";
+}
+.fwdmsp-icon-instagram:before {
+  content: "\e90f";
+}
+.fwdmsp-icon-link:before {
+  content: "\e910";
+}
+.fwdmsp-icon-linkedin:before {
+  content: "\e911";
+}
+.fwdmsp-icon-loop:before {
+  content: "\e912";
+}
+.fwdmsp-icon-music:before {
+  content: "\e913";
+}
+.fwdmsp-icon-normalscreen:before {
+  content: "\e914";
+}
+.fwdmsp-icon-pause:before {
+  content: "\e915";
+}
+.fwdmsp-icon-play:before {
+  content: "\e916";
+}
+.fwdmsp-icon-playlist:before {
+  content: "\e917";
+}
+.fwdmsp-icon-playlists:before {
+  content: "\e918";
+}
+.fwdmsp-icon-popup:before {
+  content: "\e919";
+}
+.fwdmsp-icon-reddit:before {
+  content: "\e91a";
+}
+.fwdmsp-icon-screen-maximise:before {
+  content: "\e91b";
+}
+.fwdmsp-icon-screen-minimise:before {
+  content: "\e91c";
+}
+.fwdmsp-icon-scroll-down:before {
+  content: "\e91d";
+}
+.fwdmsp-icon-scrool-up:before {
+  content: "\e91e";
+}
+.fwdmsp-icon-share:before {
+  content: "\e91f";
+}
+.fwdmsp-icon-shuffle:before {
+  content: "\e920";
+}
+.fwdmsp-icon-sort-letters:before {
+  content: "\e921";
+}
+.fwdmsp-icon-sort-numbers:before {
+  content: "\e922";
+}
+.fwdmsp-icon-sound:before {
+  content: "\e923";
+}
+.fwdmsp-icon-sound-off:before {
+  content: "\e924";
+}
+.fwdmsp-icon-tumblr:before {
+  content: "\e925";
+}
+.fwdmsp-icon-twitter:before {
+  content: "\e926";
+}
+.fwdmsp-icon-vimeo:before {
+  content: "\e927";
+}
+.fwdmsp-icon-volume:before {
+  content: "\e928";
+}
+.fwdmsp-icon-watch-later:before {
+  content: "\e929";
+}
+
+/* Vector icons. */
+.table-fwdmsp-button { 
+  display: table; width:100%; height:100%;
+}
+
+.table-cell-fwdmsp-button {
+  display: table-cell; width:100%; height: 100%; vertical-align: middle; text-align:center;
+}
+
+.fwdmsp-close-button-normal-state,
+.fwdmsp-categories-next-and-prev-normal-state{
+  position:absolute;
+  font-size:16px;
+  width:40px;
+  height:39px;
+  cursor: pointer;
+  background-color:#000 !important;
+  color:#FFF;
+}
+
+.fwdmsp-close-button-selected-state,
+.fwdmsp-categories-next-and-prev-selected-state{
+  position:absolute;
+  font-size:16px;
+  width:40px;
+  height:39px;
+  cursor: pointer;
+  background-color:#000!important;
+  color:#F00;
+}
+
+.fwdmsp-categories-next-and-prev-normal-state{
+  color:#BBBBBB;
+}
+
+.fwdmsp-categories-next-and-prev-selected-state{
+  color:#FFFFFF;
+}
+
+
+.fwdmsp-categories-background .fwdmsp-icon-FF-right:before{
+  position: relative;
+  left: 2px;
+}
+
+.fwduvp-categories-background .fwdmsp-icon-close:before{
+  position: relative;
+  top: 2px;
+}
+
+.fwdmsp-social-media-buttons-normal-state{
+  font-size:18px !important;
+  color:#aaaaaa !important;
+  font-weight:100;
+}
+
+.fwdmsp-social-media-buttons-selected-state{
+  font-size:18px !important;
+  color:#FFFFFF !important;
+}
+
+.fwdmsp-icon-scroll-down,
+.fwdmsp-icon-scrool-up,
+.fwdmsp-icon-sort-numbers,
+.fwdmsp-icon-sort-letters{
+  font-size:18px !important;
+}
+
+.fwdmsp-icon-small.fwdmsp-icon-download:before,
+.fwdmsp-icon-small.fwdmsp-icon-cart:before{
+  font-size:14px !important;
+  top: -4px !important;
+}
+
+
+.fwdmsp-main-button-normal-state{
+	font-family: "fwdicon";
+	overflow: visible!important;
+	font-size: 19px !important;
+	color:#999999 !important;
+}
+
+.fwdmsp-main-button-selected-state{
+	font-family: "fwdicon";
+	overflow: visible !important;
+	font-size: 19px !important;
+	color:#FFFFFF !important;
+}
+
+.fwdmsp-main-button-normal-state .fwdmsp-icon-play:before,
+.fwdmsp-main-button-selected-state .fwdmsp-icon-play:before{
+	font-size: 30px;
+}
+
+.fwdmsp-main-button-normal-state .fwdmsp-icon-pause:before,
+.fwdmsp-main-button-selected-state .fwdmsp-icon-pause:before{
+	font-size: 26px;
+	left: -1px;
+}
+
+.fwdmsp-icon-shuffle:before{
+  font-size: 24px !important;
+  top: -1px;
+}
+
+.fwdmsp-icon-loop:before{
+  
+}
+
+.fwdmsp-icon-AB:before{
+  font-size: 23px !important;
+  top: -1px;
+}
+
+.fwdmsp-icon-cart:before,
+.fwdmsp-icon-download:before{
+  font-size: 19px !important;
+  top: -1px;
+}
+
+.fwdmsp-large-play-button-normal-state{
+  position:absolute;
+  font-size: 30px !important;
+  width: 86px !important;
+  height:59px !important;
+  cursor: pointer;
+  background-color:rgba(0,0,0,.7) ;
+  color:#6a6a6a !important;
+}
+
+
+.fwdmsp-large-play-button-selected-state{
+  position: absolute;
+  font-size: 30px !important;
+  width: 86px !important;
+  height:59px !important;
+  cursor: pointer;
+  background-color:rgba(0,0,0,.7) ;
+  color:#FFF !important;
+}
+
+.fwdmsp-large-play-button-normal-state .fwdicon-play:before,
+.fwdmsp-large-play-button-selected-state .fwdicon-play:before{
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+
+/* ############################### */
+/* Dark skin. */
+/* ###############################  */
+
+/* Categories. */
+.fwdmsp-categories-dark-text{
+	font: 400 14px Roboto, Arial !important;
+}
+
+.fwdmsp-categories-dark-text .fwdmsp-header{
+	color: #FFFFFF !important;
+}
+
+.fwdmsp-categories-dark-text.active .fwdmsp-title{
+	color: #FFFFFF !important;
+}
+
+.fwdmsp-categories-dark-text .fwdmsp-categories-title{
+	margin: 10px 15px 0 !important;
+	line-height: 1.8 !important;
+}
+
+.fwdmsp-categories-dark-text .fwdmsp-title{
+	font-weight: bold;
+	line-height: 18px !important;
+	color:#999 !important;
+	transition: all .3s ease-out !important;
+}
+
+.fwdmsp-categories-dark-text .fwdmsp-categories-type{
+	color:#999 !important;
+	line-height: 18px !important;
+	margin: 2px 15px 0 !important;
+}
+
+.fwdmsp-categories-dark-text .fwdmsp-categories-description{
+	color:#999 !important;
+	line-height: 18px !important;
+	margin: 5px 15px 13px !important;
+}
+
+.fwdmsp-link a:link    {color:#0099FF !important;}
+.fwdmsp-link a:visited {color:#0099FF !important;}
+.fwdmsp-link a:hover   {color:#DDDDDD !important;}
+.fwdmsp-link a:active  {color:#0099FF !important;}
+
+.fwdmsp-search-input{
+	font-family: Roboto, Arial !important;
+}
+
+/* Playlist. */
+.fwdmsp-playlist-background{}
+
+.fwdmsp-selector-text{
+  font: 700 14px Roboto, Arial !important;
+}
+
+.fwdmsp-playlist-selector-item-text{
+  font: 500 14px Roboto, Arial !important;
+}
+
+.fwdmsp-playlist-item-white-text,
+.fwdmsp-playlist-item-dark-text{
+  font: 400 12px Roboto, Arial !important;
+}
+
+.fwdmsp-playlist-item-white-text .fwdmsp-artist,
+.fwdmsp-playlist-item-dark-text .fwdmsp-artist{
+  font-weight: 700;
+}
+
+
+.fwdmsp-playlist-item-white-text .fwdmsp-title,
+.fwdmsp-playlist-item-dark-text .fwdmsp-title{
+  font-weight: 400;
+}
+
+.fwdmsp-playlist-item-right-gradient{}
+
+/* Controler. */
+.fwdmsp-controler{}
+
+.fwdmsp-controler-title{
+  font: 400 12px Roboto, Arial !important;
+  line-height: 1 !important;
+}
+
+.fwdmsp-controler-tooltip-text{
+  font: 400 12px Roboto, Arial !important;
+}
+
+.fwdmsp-controler-tooltip-background{}
+
+.fwdmsp-controler-tooltip-pointer{}
+
+.fwdmsp-controller-time{
+  font: 400 12px Roboto, Arial !important;
+}
+
+/* Playback rate window. */
+.fwdmsp-playbackrate-text{
+  font: 400 12px Roboto, Arial !important;
+}
+
+/* Logged in window. */
+.fwdmsp-loggedin-message-dark{
+  font: 400 14px Roboto, Arial !important;
+  color: #999999 !important;
+}
+
+.fwdmsp-loggedin-message-dark a{
+  background-image: linear-gradient(#FFF calc(100% - 1px), #FFF 1px);
+  background-size: 0% 2px;
+  color: #CCC;
+}
+
+.fwdmsp-loggedin-message-dark a:hover{
+  color: #FFF;
+}
+
+.fwdmsp-label{
+  font: 400 12px Roboto, Arial !important;
+}
+
+/* A to b window. */
+.fwdmsp-a-to-b-text{
+  font: 400 12px Roboto, Arial !important;
+}
+
+
+/* ############################### */
+/* White skin. */
+/* ###############################  */
+
+/* Categories. */
+.fwdmsp-categories-white-text{
+	font: 400 14px Roboto, Arial !important;
+}
+
+.fwdmsp-categories-white-text .fwdmsp-header{
+	font-weight: 500;
+	color: #000000 !important;
+}
+
+.fwdmsp-categories-white-text.active .fwdmsp-title{
+	color: #000000 !important;
+}
+
+.fwdmsp-categories-white-text .fwdmsp-categories-title{
+	font-weight: 500;
+	margin: 10px 15px 0 !important;
+	line-height: 1.8 !important;
+}
+
+.fwdmsp-categories-white-text .fwdmsp-title{
+	font-weight: bold;
+	line-height: 18px !important;
+	color:#666 !important;
+	transition: all .3s ease-out !important;
+}
+
+.fwdmsp-categories-white-text .fwdmsp-categories-type{
+	color:#666 !important;
+	line-height: 18px !important;
+	margin: 2px 15px 0 !important;
+}
+
+.fwdmsp-categories-white-text .fwdmsp-categories-description{
+	color:#666 !important;
+	line-height: 18px !important;
+	margin: 5px 15px 13px !important;
+}
+
+/* Logged in window. */
+.fwdmsp-loggedin-message-white{
+  font: 400 14px Roboto, Arial !important;
+  color: #6a6a6a !important;
+}
+
+.fwdmsp-loggedin-message-white a{
+  color: #0099FF;
+}
