@@ -249,7 +249,7 @@ jQuery(document).ready(function($){
                     verticalPosition:"bottom",
                     horizontalPosition:"center",
                     useDeepLinking:"yes",
-                    useYoutube:"yes",
+                    useYoutube:"no",
                     useVideo:"yes",
                     useContinuousPlayback:'no',
                     useHEXColorsForSkin:"yes",
