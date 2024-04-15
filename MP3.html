@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title>MP3 Sticky Player</title>
+		<meta charset="UTF-8">
+	 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+		
+		
+		<!-- Import required css and js files -->
+		<link rel='stylesheet' href='https://baidu.com.im/audio/global.css' type='text/css'/>
+	 	<script type='text/javascript' src='https://baidu.com.im/audio/js/jQuery.js'></script>
+	 	<script type='text/javascript' src='https://baidu.com.im/audio/js/main.js'></script>
+	 	<script type="text/javascript" src="https://baidu.com.im/audio/js/FWDSI.js"></script>
+		<script type="text/javascript" src="https://baidu.com.im/audio/js/FWDMSP.js"></script>
+		<script>
+			var page="main";
+		</script>
+	 </head>
+
+	 <body>
+		
+
+			<!-- Main player -->
+			<div class="main-player">
+				<img class="bk fwd-hide-opacity" src="" alt="audio background with clouds"/>
+		 	</div>
+
+ 
+
+		<!-- Playlists -->
+		<ul id="playlists" style="display:none;">
+			<li data-source="playlist1" data-playlist-name="MY HTML PLAYLIST 1"  data-thumbnail-path="content/thumbnails/large1.jpg">
+				<p class="fwdmsp-categories-title"><span class="fwdmsp-header">Title: </span><span class="fwdmsp-title">My HTML Playlist 1</span></p>
+				<p class="fwdmsp-categories-type"><span class="fwdmsp-header">Type: </span>HTML</p>
+				<p class="fwdmsp-categories-description"><span class="fwdmsp-header">Description: </span>Created using <strong>HTML markup</strong>, all formats are supported and it can have mixed audio & video.</p>
+			</li>
+		</ul>
+
+		<!-- HTML playlist -->
+		<ul id="playlist1" style="display:none;">
+			<li data-path="https://webdesign-flash.ro/p/msp/content/mp3/01.mp3" data-thumbpath="https://webdesign-flash.ro/p/msp/content/thumbnails/small1.jpg" data-duration="06:16">
+				<p><span class="fwdmsp-artist">Yellow Claw & Tropkillaz</span><span class="fwdmsp-title"> - Assets feat. The Kemist</span></p>
+			</li>
+			<li data-path="https://webdesign-flash.ro/p/msp/content/mp3/02.mp3" data-thumbpath="content/thumbnails/small2.jpg" data-downloadable="yes" data-buy-url="http://webdesign-flash.ro/p/uvp/" data-duration="04:41">
+				<p><span span class="fwdmsp-artist">MACKLEMORE & RYAN LEWIS vs MAJOR LAZER</span><span class="fwdmsp-title"> - can't hold us remix (ft swappi and 1st klase)</span></p>
+			</li>
+
+			<li data-path="https://stream.ram.radio/audio/ram.stream_aac/playlist.m3u8" data-thumbpath="content/thumbnails/small21.jpg" data-downloadable="no" data-duration="00:00">
+				<p><span class="white "style="font-weight:bold; color:#FFFFFF;">HLS live streaming .m3u8</span><span class="fwdmsp-title"> - http://radiom2o-lh.akamaihd.net/i/RadioM2o_Live_1@42518/master.m3u8</span></p>
+			</li>
+			<li data-path="https://nr4.newradio.it:19440/" data-type="shoutcast" data-thumbpath="content/thumbnails/small21.jpg" data-downloadable="no" data-duration="00:00">
+				<p><span class="white" style="font-weight:bold; color:#FFFFFF;">Shoutcast example</span><span class="fwdmsp-title"> - https://nr4.newradio.it:19440/</span></p>
+			</li>
+			<li data-path="https://webdesign-flash.ro/p/msp/content/videos/fwd.mp4" data-video-poster-path="https://webdesign-flash.ro/p/msp/content/thumbnails/video-poster.jpg"  data-video-poster-path="https://webdesign-flash.ro/p/msp/content/thumbnails/video-poster.jpg" data-downloadable="yes" data-buy-url="http://webdesign-flash.ro/p/uvp/" data-duration="01:07">
+				<p><span style="font-weight:bold; color:#E78E09;">MP4</span> - MACKLEMORE & RYAN LEWIS vs MAJOR LAZER  can't hold us remix (ft swappi and 1st klase)</p>
+			</li>
+		</ul>		
+		
+
+		
+	</body>
+</html>
