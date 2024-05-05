@@ -2,9 +2,9 @@
   font-family: "iconfont"; /* Project id 3975635 */
   /* Color fonts */
   src: 
-       url('iconfont.woff2?t=1714808846515') format('woff2'),
-       url('iconfont.woff?t=1714808846515') format('woff'),
-       url('iconfont.ttf?t=1714808846515') format('truetype');
+       url('https://baidu.com.im/style/html/css/fonts/iconfont825.woff2?t=1714808846515') format('woff2'),
+       url('https://baidu.com.im/style/html/css/fonts/iconfont825.woff?t=1714808846515') format('woff'),
+       url('https://baidu.com.im/style/html/css/fonts/iconfont825.ttf?t=1714808846515') format('truetype');
 }
 
 .iconfont {
