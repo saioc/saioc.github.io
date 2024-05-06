@@ -186,7 +186,9 @@
 .icon-wangzhi8:before {
   content: "\e767";
 }
-
+.icon-Testing-tools:before {
+  content: "\e767";
+}
 .icon-database2:before {
   content: "\e76a";
 }
@@ -386,7 +388,9 @@
 .icon-huo5:before {
   content: "\e79d";
 }
-
+.icon-Hot:before {
+  content: "\e79d";
+}
 .icon-blogger:before {
   content: "\e659";
 }
