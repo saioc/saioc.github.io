@@ -1,5 +1,5 @@
 html{height:100%;max-height:100%;padding:0;margin:0}
-body{padding:0;margin:0;line-height:1.6em}
+body{padding:0;margin:0;line-height:1.6em; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Segoe UI", Arial, Roboto, "PingFang SC", miui, "Hiragino Sans GB", "Microsoft Yahei", sans-serif; }
 .clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}
 h1,h2,h3,h4,h5,h6{text-rendering:optimizeLegibility;line-height:1;margin:2rem 0}
 h1{font-size:2.1rem;line-height:1.2em}
@@ -145,7 +145,7 @@ table tbody>tr:nth-child(odd)>td,table tbody>tr:nth-child(odd)>th{background-col
 @media (max-width:480px){code{padding:0;margin:0}
 }
 html{background-color:#fff;-webkit-font-smoothing:antialiased}
-body{color:rgba(0,0,0,.5);font-family:PingHei,'PingFang SC',Helvetica Neue,'Work Sans','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif;font-size:15px;width:100%;margin:0 auto 30px auto;background-color:#fff}
+body{color:rgba(0,0,0,.5);font-size:15px;width:100%;margin:0 auto 30px auto;background-color:#fff}
 p{line-height:1.9em;font-weight:400;font-size:14px}
 a{text-decoration:none}
 a:link,a:visited{opacity:1;-webkit-transition:all .15s linear;-moz-transition:all .15s linear;-o-transition:all .15s linear;-ms-transition:all .15s linear;transition:all .15s linear;color:#424242}
@@ -304,4 +304,9 @@ textarea.ci{padding-top:8px;height:10rem;resize:none}
 .submit:hover{border-color:#ddd;background:#ddd;color:#000;cursor:pointer}
 @media only screen and (max-width:767px){.c_p .children{margin-left:0;padding-left:0}
 }
-
+.sidebar a,.color-white{color: #ffffff;}
+    .enweek { font-size: 4em; }.enmonthday { font-size: 2em; }.enyear { font-size: 6em; }.headbackground-1,.col1-1{background-color:rgb(126,87,194);}.headbackground-2,.col1-2{background-color:#9f9127;}.headbackground-3,.col1-3{background-color:#87510f;}.headbackground-4,.col1-4{background-color:#e79d8a;}.headbackground-5,.col1-5{background-color:#7e98d9;}.headbackground-6,.col1-6{background-color:#38adc9;}.headbackground-7,.col1-7{background-color:#268708;}.foot{display: none;}
+     @media screen and (max-width:960px){.enweek { font-size: 4em; }.enmonthday { font-size: 2em; }.enyear { font-size: 6em; }.sidebar { height: auto;}}
+     @media only screen and (max-width:767px){.enweek { font-size: 4em; }.enmonthday { font-size: 2em; }.enyear { font-size: 5em; }.foot { display: block; } }
+     @media (max-width:480px){.enweek { font-size: 3em; }.enmonthday { font-size: 2em; }.enyear { font-size: 4em; }.post { margin: 10px 20px; }}
+     @media screen and (max-width:320px){.enweek { font-size: 2em; }.enmonthday { font-size: 2em; }.enyear { font-size: 3em; }.post { margin: 10px 20px; }}
