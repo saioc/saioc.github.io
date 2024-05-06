@@ -149,7 +149,7 @@ body{color:rgba(0,0,0,.5);font-size:15px;width:100%;margin:0 auto 30px auto;back
 p{font-weight:400;font-size:14px}
 a{text-decoration:none}
 a:link,a:visited{opacity:1;-webkit-transition:all .15s linear;-moz-transition:all .15s linear;-o-transition:all .15s linear;-ms-transition:all .15s linear;transition:all .15s linear;color:#424242}
-a:active,a:hover{color:#4786D6}
+a:active,a:hover{color:#ffffff}
 .animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s}
 .animated.hinge{-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s}
 @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translateY(-20px)}
