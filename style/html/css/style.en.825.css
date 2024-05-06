@@ -304,7 +304,7 @@ textarea.ci{padding-top:8px;height:10rem;resize:none}
 .submit:hover{border-color:#ddd;background:#ddd;color:#000;cursor:pointer}
 @media only screen and (max-width:767px){.c_p .children{margin-left:0;padding-left:0}
 }
-.sidebar a,.color-white{color: #ffffff;}
+.sidebar a,.color-white{color: #ffffff;}.by_farbox a,.by_farbox span{ color: rgba(0, 0, 0, .5); font-size: 12px; }
     .enweek { font-size: 4em; }.enmonthday { font-size: 2em; }.enyear { font-size: 6em; }.headbackground-1,.col1-1{background-color:rgb(126,87,194);}.headbackground-2,.col1-2{background-color:#9f9127;}.headbackground-3,.col1-3{background-color:#87510f;}.headbackground-4,.col1-4{background-color:#e79d8a;}.headbackground-5,.col1-5{background-color:#7e98d9;}.headbackground-6,.col1-6{background-color:#38adc9;}.headbackground-7,.col1-7{background-color:#268708;}.foot{display: none;}
      @media screen and (max-width:960px){.enweek { font-size: 4em; }.enmonthday { font-size: 2em; }.enyear { font-size: 6em; }.sidebar { height: auto;}}
      @media only screen and (max-width:767px){.enweek { font-size: 4em; }.enmonthday { font-size: 2em; }.enyear { font-size: 5em; }.foot { display: block; } }
