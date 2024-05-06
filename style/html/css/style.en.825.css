@@ -9,7 +9,7 @@ h4{font-size:1.3rem}
 h5{font-size:1.3rem}
 h6{font-size:1.3rem}
 img{max-width:100%;height:auto}
-dl,ol,p,ul{margin:1em 0}
+dl,ol,p,ul{margin:1em}
 ol ol,ol ul,ul ol,ul ul{margin:.4em 0}
 .content blockquote p,.content li p,.post blockquote p,.post li p,blockquote p,li p,ol p,ul p{margin:0;overflow:visible}
 a img{border:none}
