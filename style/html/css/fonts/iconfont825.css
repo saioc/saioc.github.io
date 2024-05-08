@@ -1726,7 +1726,9 @@
 .icon-wangzhi:before {
   content: "\e620";
 }
-
+.icon-ip-proxy:before {
+  content: "\e620";
+}
 .icon-shejiao-wangluo:before {
   content: "\e622";
 }
