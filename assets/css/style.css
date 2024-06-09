@@ -611,6 +611,15 @@ a.text-primary:hover {
 	background-color: var(--themecolor);
 }
 .cover-list { display: block; padding-top: 10px; font-size: 0; } .cover-list li { display: inline-block; margin-right: 12px; width: 23.5%;} .feed-card-cover { width: 155.5px; height: 104px; } .feed-card-cover { border: none !important; } .feed-card-cover { position: relative; overflow: hidden; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; border-radius: 4px; border: 1px solid #f2f2f2; width: 100%; height: 120px; cursor: pointer; } .feed-card-cover a { display: inline-block; width: 100%; height: 100%; background-color: #f2f2f2; } .feed-card-cover img { width: 100%; height: 100%; -webkit-transition: all .5s ease .1s; -moz-transition: all .5s ease .1s; transition: all .5s ease .1s; -o-object-fit: cover; object-fit: cover; } .post-content { font-size: 12px; } .widget_recent_entries li a { display: -moz-box; display: -ms-flexbox; display: flex; -moz-box-align: center; -ms-flex-align: center; align-items: center; padding: 3px 0; cursor: pointer; margin: 0 6px; display: -webkit-box; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.post_article .download_btn {position: relative;z-index: 1;display: inline-block;*display: inline;*zoom: 1;height: 37px;line-height: 37px;padding-left: 50px;
+padding-right: 20px;margin-right: 10px;margin-bottom: 10px;border: 1px solid #d7d7d7;border-top-width: 1px;border-right-width: 1px;
+border-bottom-width: 1px;border-left-width: 1px;border-width: 1px 1px 4px;font-size: 14px;font-weight: 700;color: #0b588c;text-decoration: none;
+-moz-transition: none;-webkit-transition: none;-o-transition: none;transition: none;border-radius: 2px;}
+.post_article .download_btn .ico { position: absolute; z-index: 2; left: 5px; top: 5.5px; width: 12px; height: 8px; font-size: 26px; background-position: -63px -166px; }
+.post_article .download_btn .line {position:absolute;z-index:2;left:32px;top:0;height:37px;width:1px;background-color:#d7d7d7;}
+.post_article .download_btn:hover {background-color:#0b588c;border-color:#0b588c #0b588c #0b4972;color:#fff;}
+.post_article .download_btn:hover .ico {background-position:-80px -166px;}
+.post_article .download_btn:hover .line {background-color:#0b588c;}
 /*页面框架*/
 #content {
 	padding: 0 5px;
