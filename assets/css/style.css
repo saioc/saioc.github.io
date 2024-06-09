@@ -1914,7 +1914,7 @@ html.filter-grayscale {
 .single .post-thumbnail,
 .page .post-thumbnail {
 	max-height: 30vh;
-	min-height: 250px;
+	min-height: 80px;
 }
 .post-header.post-header-with-thumbnail .post-header-text-container {
 	position: absolute;
