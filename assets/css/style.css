@@ -621,6 +621,7 @@ border-bottom-width: 1px;border-left-width: 1px;border-width: 1px 1px 4px;font-s
 .post_article .download_btn:hover .ico {background-position:-80px -166px;}
 .post_article .download_btn:hover .line {background-color:#0b588c;}
 .post-waterfalls { column-count: 3;      column-gap: 10px;  } .post-waterfalls .box { display: inline-block; margin-bottom: 20px; width: 100%;  } .post-waterfalls .box img { width: 100%;  } @media screen and (min-width: 600px) { .post-waterfalls { column-count: 4;      } } @media screen and (min-width: 900px) { .post-waterfalls { column-count: 5;      } }
+.list-waterfalls{ padding-bottom: 0;}.list-waterfalls .post-header-with-thumbnail {margin-bottom: 0;}
 /*页面框架*/
 #content {
 	padding: 0 5px;
