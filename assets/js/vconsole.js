@@ -1266,7 +1266,7 @@
         return o;
       }
       function s(e) {
-        var t = document.createElement(""),
+        var t = document.createElement("style"),
           o = e.attributes || {};
         if (void 0 === o.nonce) {
           var r = n.nc;
