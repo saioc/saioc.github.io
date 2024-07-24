@@ -2587,33 +2587,33 @@
     },
     function (e, t) {
       e.exports =
-        '<div id="__vconsole" class="">\n  <div class="vc-switch">vConsole</div>\n  <div class="vc-mask">\n  </div>\n  <div class="vc-panel">\n    <div class="vc-tabbar">\n    </div>\n    <div class="vc-topbar">\n    </div>\n    <div class="vc-content">\n    </div>\n    <div class="vc-toolbar">\n      <a class="vc-tool vc-global-tool vc-tool-last vc-hide">Hide</a>\n    </div>\n  </div>\n</div>';
+        '';
     },
     function (e, t) {
       e.exports =
-        '<a class="vc-tab" data-tab="{{id}}" id="__vc_tab_{{id}}">{{name}}</a>';
+        '';
     },
     function (e, t) {
-      e.exports = '<div class="vc-logbox" id="__vc_log_{{id}}">\n  \n</div>';
-    },
-    function (e, t) {
-      e.exports =
-        '<a class="vc-toptab vc-topbar-{{pluginID}}{{if (className)}} {{className}}{{/if}}">{{name}}</a>';
-    },
-    function (e, t) {
-      e.exports = '<a class="vc-tool vc-tool-{{pluginID}}">{{name}}</a>';
+      e.exports = '';
     },
     function (e, t) {
       e.exports =
-        '<div id="{{_id}}" class="vc-item vc-item-{{logType}} {{style}}">\n\t<div class="vc-item-content"></div>\n</div>';
+        '';
+    },
+    function (e, t) {
+      e.exports = '';
     },
     function (e, t) {
       e.exports =
-        '<div class="vc-fold">\n  {{if (lineType == \'obj\')}}\n    <i class="vc-fold-outer">{{outer}}</i>\n    <div class="vc-fold-inner"></div>\n  {{else if (lineType == \'value\')}}\n    <i class="vc-code-{{valueType}}">{{value}}</i>\n  {{else if (lineType == \'kv\')}}\n    <i class="vc-code-key{{if (keyType)}} vc-code-{{keyType}}-key{{/if}}">{{key}}</i>: <i class="vc-code-{{valueType}}">{{value}}</i>\n  {{/if}}\n</div>';
+        '';
     },
     function (e, t) {
       e.exports =
-        '<span>\n  <i class="vc-code-key{{if (keyType)}} vc-code-{{keyType}}-key{{/if}}">{{key}}</i>: <i class="vc-code-{{valueType}}">{{value}}</i>\n</span>';
+        '';
+    },
+    function (e, t) {
+      e.exports =
+        '';
     },
     function (module, exports, __webpack_require__) {
       var __WEBPACK_AMD_DEFINE_FACTORY__,
@@ -3220,11 +3220,11 @@
     },
     function (e, t) {
       e.exports =
-        '<div>\n  <div class="vc-log"></div>\n  <form class="vc-cmd">\n    <button class="vc-cmd-btn" type="submit">OK</button>\n    <ul class=\'vc-cmd-prompted\'></ul>\n    <div class="vc-cmd-input-wrap">\n      <textarea class="vc-cmd-input" placeholder="command..."></textarea>\n    </div>\n  </form>\n  <form class="vc-cmd vc-filter">\n    <button class="vc-cmd-btn" type="submit">filter</button>\n    <ul class=\'vc-cmd-prompted\'></ul>\n    <div class="vc-cmd-input-wrap">\n      <textarea class="vc-cmd-input" placeholder="filter..."></textarea>\n    </div>\n  </form>\n</div>\n';
+        '';
     },
     function (e, t) {
       e.exports =
-        '<pre class="vc-item-code vc-item-code-{{type}}">{{content}}</pre>';
+        '';
     },
     function (e, t, n) {
       var o, r, i;
@@ -3532,7 +3532,7 @@
               : o) || (e.exports = i);
     },
     function (e, t) {
-      e.exports = '<div>\n  <div class="vc-log"></div>\n</div>';
+      e.exports = '';
     },
     function (e, t, n) {
       var o, r, i;
@@ -4296,15 +4296,15 @@
     },
     function (e, t) {
       e.exports =
-        '<div class="vc-table">\n  <div class="vc-log"></div>\n</div>';
+        '';
     },
     function (e, t) {
       e.exports =
-        '<dl class="vc-table-row">\n  <dd class="vc-table-col vc-table-col-4">Name {{if (count > 0)}}({{count}}){{/if}}</dd>\n  <dd class="vc-table-col">Method</dd>\n  <dd class="vc-table-col">Status</dd>\n  <dd class="vc-table-col">Time</dd>\n</dl>';
+        '';
     },
     function (e, t) {
       e.exports =
-        '<div class="vc-group {{actived ? \'vc-actived\' : \'\'}}">\n  <dl class="vc-table-row vc-group-preview" data-reqid="{{id}}">\n    <dd class="vc-table-col vc-table-col-4">{{name}}</dd>\n    <dd class="vc-table-col">{{method}}</dd>\n    <dd class="vc-table-col">{{status}}</dd>\n    <dd class="vc-table-col">{{costTime}}</dd>\n  </dl>\n  <div class="vc-group-detail">\n    <div>\n      <dl class="vc-table-row vc-left-border">\n        <dt class="vc-table-col vc-table-col-title">General</dt>\n      </dl>\n      <div class="vc-table-row vc-left-border vc-small">\n        <div class="vc-table-col vc-table-col-2">URL</div>\n        <div class="vc-table-col vc-table-col-4 vc-max-height-line">{{url}}</div>\n      </div>\n      <div class="vc-table-row vc-left-border vc-small">\n        <div class="vc-table-col vc-table-col-2">Method</div>\n        <div class="vc-table-col vc-table-col-4 vc-max-height-line">{{method}}</div>\n      </div>\n    </div>\n    {{if (header !== null)}}\n    <div>\n      <dl class="vc-table-row vc-left-border">\n        <dt class="vc-table-col vc-table-col-title">Response Headers</dt>\n      </dl>\n      {{for (var key in header)}}\n      <div class="vc-table-row vc-left-border vc-small">\n        <div class="vc-table-col vc-table-col-2">{{key}}</div>\n        <div class="vc-table-col vc-table-col-4 vc-max-height-line">{{header[key]}}</div>\n      </div>\n      {{/for}}\n    </div>\n    {{/if}}\n    {{if (requestHeader !== null)}}\n    <div>\n      <dl class="vc-table-row vc-left-border">\n        <dt class="vc-table-col vc-table-col-title">Request Headers</dt>\n      </dl>\n      {{for (var key in requestHeader)}}\n      <div class="vc-table-row vc-left-border vc-small">\n        <div class="vc-table-col vc-table-col-2">{{key}}</div>\n        <div class="vc-table-col vc-table-col-4 vc-max-height-line">{{requestHeader[key]}}</div>\n      </div>\n      {{/for}}\n    </div>\n    {{/if}}\n    {{if (getData !== null)}}\n    <div>\n      <dl class="vc-table-row vc-left-border">\n        <dt class="vc-table-col vc-table-col-title">Query String Parameters</dt>\n      </dl>\n      {{for (var key in getData)}}\n      <div class="vc-table-row vc-left-border vc-small">\n        <div class="vc-table-col vc-table-col-2">{{key}}</div>\n        <div class="vc-table-col vc-table-col-4 vc-max-height-line">{{getData[key]}}</div>\n      </div>\n      {{/for}}\n    </div>\n    {{/if}}\n    {{if (postData !== null)}}\n    <div>\n      <dl class="vc-table-row vc-left-border">\n        <dt class="vc-table-col vc-table-col-title">Request Payload</dt>\n      </dl>\n      {{if (typeof postData === \'string\')}}\n        <div class="vc-table-row vc-left-border vc-small">\n          <pre class="vc-table-col">{{postData}}</pre>\n        </div>\n      {{else}}\n        {{for (var key in postData)}}\n        <div class="vc-table-row vc-left-border vc-small">\n          <div class="vc-table-col vc-table-col-2">{{key}}</div>\n          <div class="vc-table-col vc-table-col-4 vc-max-height-line">{{postData[key]}}</div>\n        </div>\n        {{/for}}\n      {{/if}}\n    </div>\n    {{/if}}\n    <div>\n      <dl class="vc-table-row vc-left-border">\n        <dt class="vc-table-col vc-table-col-title">Response</dt>\n      </dl>\n      <div class="vc-table-row vc-left-border vc-small">\n        <pre class="vc-table-col vc-max-height vc-min-height">{{response || \'\'}}</pre>\n      </div>\n    </div>\n  </div>\n</div>';
+        '';
     },
     function (e, t, n) {
       var o, r, i;
@@ -5089,7 +5089,7 @@
         (e.exports = t);
     },
     function (e, t) {
-      e.exports = '<div>\n  <div class="vc-log"></div>\n</div>';
+      e.exports = '';
     },
     function (e, t, n) {
       var o, r, i;
@@ -5266,11 +5266,11 @@
     },
     function (e, t) {
       e.exports =
-        '<span class="vcelm-node">&lt;{{node.tagName.toLowerCase()}}{{if (node.className || node.attributes.length)}}\n  <i class="vcelm-k">\n    {{for (var i = 0; i < node.attributes.length; i++)}}\n      {{if (node.attributes[i].value !== \'\')}}\n        {{node.attributes[i].name}}="<i class="vcelm-v">{{node.attributes[i].value}}</i>"{{else}}\n        {{node.attributes[i].name}}{{/if}}{{/for}}</i>{{/if}}&gt;</span>';
+        '';
     },
     function (e, t) {
       e.exports =
-        '<span class="vcelm-node">&lt;/{{node.tagName.toLowerCase()}}&gt;</span>';
+        '';
     },
     function (e, t, n) {
       var o, r, i;
@@ -5691,11 +5691,11 @@
     },
     function (e, t) {
       e.exports =
-        '<div class="vc-table">\n  <div class="vc-log"></div>\n</div>';
+        '';
     },
     function (e, t) {
       e.exports =
-        '<div>\n  <dl class="vc-table-row">\n    <dd class="vc-table-col">Name</dd>\n    <dd class="vc-table-col vc-table-col-2">Value</dd>\n  </dl>\n  {{for (var i = 0; i < list.length; i++)}}\n  <dl class="vc-table-row">\n    <dd class="vc-table-col">{{list[i].name}}</dd>\n    <dd class="vc-table-col vc-table-col-2">{{list[i].value}}</dd>\n  </dl>\n  {{/for}}\n</div>';
+        '';
     },
   ]);
 });
