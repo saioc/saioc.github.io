@@ -1,0 +1,29 @@
+.io-block-title{
+    margin-bottom: 8px;
+}
+.io-post-card{
+    background-color: #ececec;
+    border-radius: 8px;
+    padding: 14px;
+}
+.io-hide-content{
+    background-color: #fedaff;
+    border-radius: 8px;
+    padding: 14px;
+}
+.io-hide-content .io-block-title{
+    color: #5c1c5e;
+}
+.io-hide-innerblocks{
+    background: #fff;
+    border-radius: 6px;
+    padding: 10px;
+    min-height: 50px;
+}
+.io-preview img{
+    width: auto;
+    max-height:80px;
+}
+.mb-2{
+    margin-bottom: 12px;
+}
