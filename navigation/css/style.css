@@ -1,9 +1,3 @@
-/*!
- * Theme Name:One Nav
- * Theme URI:https://www.iotheme.cn/
- * Author:iowen
- * Author URI:https://www.iowen.cn/
- */
 @charset "utf-8";
 
 :root {
@@ -1258,7 +1252,7 @@ a img.aligncenter {
 }
 
 .text-xs {
-    font-size: .75rem !important; text-align: center;
+    font-size: .75rem !important; 
 }
 
 .text-sm {
