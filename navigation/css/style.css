@@ -5865,7 +5865,27 @@ input[type="checkbox"]+label {
     -webkit-animation: animationFramesOne 12s linear infinite;
     animation: animationFramesOne 12s linear infinite
 }
-
+.shape-12 {
+    position: absolute;
+    top: 10%;
+    right: 8%;
+    -webkit-animation: animationFramesOne 12s linear infinite;
+    animation: animationFramesOne 12s linear infinite
+}
+.shape-13 {
+    position: absolute;
+    top: 10%;
+    right: 8%;
+    -webkit-animation: animationFramesOne 12s linear infinite;
+    animation: animationFramesOne 12s linear infinite
+}
+.shape-14 {
+    position: absolute;
+    top: 10%;
+    right: 8%;
+    -webkit-animation: animationFramesOne 12s linear infinite;
+    animation: animationFramesOne 12s linear infinite
+}
 @keyframes animationFramesOne {
     0% {
         transform: translate(0) rotate(0deg)
