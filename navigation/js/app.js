@@ -2399,3 +2399,20 @@ $('.toCanvas').click(function(e) {
         });
     }
 });
+
+// 获取元素
+const langToggle = document.getElementById('langToggle');
+const langMenu = document.getElementById('langMenu');
+
+// 点击 Language 按钮显示或隐藏菜单
+langToggle.onclick = function(event) {
+    event.preventDefault();  // 阻止默认行为
+    langMenu.classList.toggle('show');
+};
+
+// 点击窗口外部关闭菜单
+window.onclick = function(event) {
+    if (!langMenu.contains(event.target) && !langToggle.contains(event.target)) {
+        langMenu.classList.remove('show');
+    }
+};
