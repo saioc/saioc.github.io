@@ -1,0 +1,232 @@
+<script type="text/javascript">
+FWDUVPUtils.onReady(function(){
+				
+	new FWDUVPlayer({		
+		//main settings
+		instanceName:"player1",
+		parentId:"myDiv",
+		playlistsId:"playlists",
+		mainFolderPath:"https://www.825.im/content",
+        skinPath:"minimal_skin_dark",	//	skinPath：“content/minimal_skin_dark” - 外观路径，包含外观图形的文件夹。
+        displayType:"responsive",	//	displayType：“响应式” - 这可以是响应式或全屏的，如果您想将播放器嵌入到 div 内的页面中，则将其设置为响应式，如果您希望播放器始终填充浏览器窗口的宽度和高度，请将其设置为全屏。
+        youtubeAPIKey:"",	//	youtubeAPIKey：“” - 如果您使用的是 youtube 播放列表，请将此键替换为您自己的播放列表，有关更多细节，请观看此收听视频教程。
+        initializeOnlyWhenVisible:"no",	//	initializeOnlyWhenVisible：“no” - 延迟滚动/加载，当播放器在页面中可见时，在滚动时初始化UVP的可能性，例如，如果播放器位于网页的不可见部分中，则不会初始化/播放，而是仅在用户滚动到添加播放器的部分时启动/播放UVP。
+        useVectorIcons:"no",	//	useVectorIcons：“no” - 这可以是或否，如果设置为是，按钮将加载字体真棒矢量的图标，否则它将加载默认的png图形按钮。就个人而言，由于像素完美定位，我更喜欢基于图形 png 的按钮。
+        fillEntireVideoScreen:"no",	//	fillEntireVideoScreen：“no” - 这可以是或否，如果设置为是，视频将填充整个可用空间，根据视频大小删除任何水平或垂直间隙，如果保留为否，它将正常调整视频大小在这里的示例。
+        goFullScreenOnButtonPlay:"no",	//	goFullScreenOnButtonPlay：“no” - 这可以是或否，如果在单击播放按钮时设置为是，播放器也将全屏显示。
+        playsinline:"yes",	//	Playsinline：“是” - 这可以是“或”否“，它仅适用于IOS / iPhone，如果您希望iPhone使用默认操作系统视频播放器，请将此项设置为否，否则将其设置为是。
+        useHEXColorsForSkin:"no",	//	useHEXColorsForSkin：“no” - 这可以是或否，如果设置为是，可以使用十六进制颜色修改玩家皮肤颜色，可以设置皮肤正常和选定状态，请注意，我们为此功能创建了两个完美的特殊皮肤，它们可以在内容文件夹下的hex_white和hex_dark文件夹中找到，因此如果您正在计划，请使用此皮肤要使用此功能，它也可以与其他皮肤一起使用，但由于其背后的数学工作方式，颜色可能不会完全按照您想要的方式，请注意，皮肤上的白色将 100% 填充十六进制颜色，深色领将用十六进制颜色归档 0%，介于两者之间的所有内容都将尽可能接近， 这听起来比这里实际上是:)听的例子更复杂。
+        normalHEXButtonsColor:"#FF0000",	//	normalHEXButtonsColor：“#FF0000” - 皮肤正常状态的十六进制颜色。
+        googleAnalyticsTrackingCode:"",	//	googleAnalyticsTrackingCode：“yes” - Google Analytics跟踪代码。
+        useResumeOnPlay:"no",	//	useResumeOnPlay：“no” - 这可以是“是”或“否”。如果您希望播放器从浏览器关闭时的位置恢复播放，请将此选项设置为 yes。
+        useDeepLinking:"yes",	//	useDeepLinking：“是” - 这可以是“或”否”。允许或不允许深度链接，如果深度链接被禁用，Facebook 分享按钮将共享当前页面网址。
+        addKeyboardSupport:"yes",	//	addKeyboardSupport：“yes” - 这可以是“或”否”。启用或禁用键盘空格键以暂停或播放视频。
+        showPreloader:"yes",	//	showPreloader：“是” - 这可以是或否。隐藏或显示循环预加载器。
+        preloaderBackgroundColor:"#000000",	//	预加载器背景颜色：“#000000” - 圆形预加载器背景颜色。
+        preloaderFillColor:"#FFFFFF",	//	预加载器填充颜色：“#FF0000” - 圆形预加载器填充颜色。
+        autoScale:"yes",	//	自动缩放：“是” - 这可以是“或”否”。如果设置为 yes，则 UVP 高度将始终与 UVP 宽度成正比，如果设置为 no，则高度将根据 truemaxHeightTѰ 属性进行固定。
+        showButtonsToolTip:"yes",	//	showButtonsToolTip：“yes” - 这可以是或否，启用或禁用控制栏按钮工具提示。
+        stopVideoWhenPlayComplete:"no",	//	stopVideoWhenPlayComplete：“yes” - 这可以是“或”否“，如果在视频播放完成后启用此功能，则视频将停止并显示海报（如果有）。
+        playAfterVideoStop:"no",	//	playAfterVideoStop：“yes” - 这可以是或否，如果视频默认设置为在特定时间停止，它将停止，但如果要跳到下一个视频，请将此功能设置为是。
+        autoPlay:"no",	//	自动播放：“否” - 这可以是“是”或“否”。请注意，只有当视频开始静音以符合浏览器自动播放政策时，才能自动播放。
+        autoPlayText:"Click To Unmute",	//	autoPlayText：“单击以取消静音” - 取消静音自动播放按钮文本，如果您不需要此按钮，请将此选项留空。
+        loop:"no",	//	循环：“否” - 这可以是 yes 或 no。
+        shuffle:"no",	//	随机播放：“是” - 这可以是“或”否”。如果将其设置为 no，即使存在错误或警告，也不会显示信息错误，因此无法判断出了什么问题。
+        showErrorInfo:"yes",	//	showErrorInfo：“no” - 这可以是“是”或“否”。
+        maxWidth:980,	//	maxWidth：750 - 一个表示播放器最大宽度（以像素为单位）的数字，可以将此属性视为最大宽度 css 属性（仅适用于 听显示类型听响应）。
+        maxHeight:552,	//	maxHeight：750 - 一个表示播放器最大高度（以像素为单位）的数字，可以将此属性视为最大高度 css 属性（仅适用于 听显示类型听是响应式）。
+        buttonsToolTipHideDelay:1.5,	//	按钮工具提示隐藏延迟：1.5 - 在悬停按钮时出现按钮工具提示之前，以秒为单位的延迟。
+        volume:.8,	//	volume：.8 - 一个介于 0.1 到 1 之间的数字，表示音量级别。
+        backgroundColor:"#000000",	//	背景颜色：“#000000” - 主要背景颜色。
+        videoBackgroundColor:"#000000",	//	videoBackgroundColor：“#000000” - 视频背景颜色，这不适用于YouTube播放器。
+        posterBackgroundColor:"#000000",	//	posterBackgroundColor：“#000000” - 视频海报背景颜色，如果需要透明背景，请将其设置为透明。
+        buttonsToolTipFontColor:"#5a5a5a",	//	按钮工具提示字体颜色：“#000000” - 按钮工具提示颜色。
+        //logo settings	//	徽标设置
+        showLogo:"yes",	//	showLogo：“yes” - 这可以是“或”否“，隐藏或显示徽标。
+        hideLogoWithController:"yes",	//	hideLogoWithController：“yes” - 这可以是“或”否”。如果设置为 yes，则当控制器隐藏时徽标将隐藏，否则它将始终在视频中可见。
+        logoPosition:"topRight",	//	logoPosition：“topRight” - 这可以是topRight，topLeft，bottomRight，bottomLeft，用于将徽标定位在其中一个视频角落。
+        logoLink:"http://www.webdesign-flash.ro/",	//	logoLink：“http://www.yourlink.com” - 单击徽标时将打开的页面链接，听无值将禁用此功能。
+        logoMargins:10,	//	徽标边距：“20” - 以像素为单位的边距，用于从视频角落推送徽标。
+        //playlists/categories settings	//	播放列表/类别设置
+        showPlaylistsSearchInput:"yes",	//	显示播放列表搜索输入：“是” - 这可以是或否，禁用或启用播放列表/分类搜索输入。
+        usePlaylistsSelectBox:"yes",	//	usePlaylistsSelectBox：“yes” - 这可以是或否，禁用或启用播放列表/分类组合框选择器。
+        showPlaylistsButtonAndPlaylists:"yes",	//	showPlaylistsButtonAndPlaylists：“yes” - 这可以是或否，禁用或启用播放列表按钮和播放列表恩多。
+        showPlaylistsByDefault:"no",	//	showPlaylistsByDefault：“yes” - 这可以是或否，如果设置为是，则在加载并显示终极视频播放器后立即显示播放列表窗口。
+        thumbnailSelectedType:"opacity",	//	thumbnailSelectedType：“opacity” - 这可以是阈值，不透明度或黑白，它代表播放列表缩略图选择的状态（请注意，在本地或移动设备上测试时，此设置始终是不透明的）。
+        startAtPlaylist:0,	//	startAtPlaylist：0 - 一个数字，表示首次加载 UVP 时将加载的播放列表，如果使用深度链接并且浏览器 URL 具有播放列表链接，则忽略此选项。播放列表计数从 0（零）开始。
+        buttonsMargins:0,	//	按钮边距：0 - 下一个、上一个和关闭按钮的边距。
+        thumbnailMaxWidth:350,	//	thumbnailMaxWidth：330 - 表示缩略图最大宽度的数字，缩略图的宽度将根据可用空间而变化，但永远不会高于此选项。
+        thumbnailMaxHeight:350,	//	thumbnailMaxHeight：330 - 一个数字，表示缩略图的最大宽度（以像素为单位），缩略图的高度将根据可用空间而变化，但永远不会高于此选项。
+        horizontalSpaceBetweenThumbnails:40,	//	水平间距缩略图之间：40 - 一个数字，表示缩略图之间的水平空间（以像素为单位）。
+        verticalSpaceBetweenThumbnails:40,	//	verticalSpaceBetweenThumbnails：40 - 一个数字，表示缩略图之间的垂直空间（以像素为单位）。
+        inputBackgroundColor:"#333333",	//	inputBackgroundColor：“#333333”， inputColor：“#999999”，
+        inputColor:"#999999",	//	        inputColor:"#999999",
+        //playlist settings	//	//playlist settings
+        showPlaylistButtonAndPlaylist:"yes",	//	显示 PlayListButtonAndPlaylist：“yes” - 这可以是 yes 或 no。禁用或启用（隐藏或显示）播放列表按钮和播放列表。
+        playlistPosition:"right",	//	播放列表位置：“底部” - 这可以是底部或右侧。
+        showPlaylistByDefault:"yes",	//	showPlayListByDefault：“yes” - 这可以是或否，如果设置为是，则在加载和显示 UVP 后立即显示播放列表，否则播放列表将被隐藏，并且只有在单击或触摸播放列表按钮时才会出现。
+        showPlaylistName:"yes",	//	showPlaylistName：“yes” - 这可以是“或”否”。禁用或启用播放列表名称。
+        showSearchInput:"yes",	//	showSearchInput：“yes” - 这可以是 yes 或 no。禁用或启用搜索输入。
+        showLoopButton:"yes",	//	showLoopButton：“yes” - 这可以是 yes 或 no。隐藏或显示循环按钮。
+        showShuffleButton:"yes",	//	showShuffleButton：“是” - 这可以是“或”否”。隐藏或显示随机播放按钮。
+        showPlaylistOnFullScreen:"no",	//	showPlaylistOnFullScreen：“yes” - 这可以是“或”否”。默认情况下，当播放器全屏进入时，播放列表是隐藏的，如果您不希望发生这种情况，请将此选项设置为 yes（请注意，如果浏览器视口宽度小于 1000 px，则无论此选项是否设置为 yes，播放列表都将被隐藏，因为没有足够的空间同时显示播放列表和视频屏幕）。
+        showNextAndPrevButtons:"yes",	//	showNextAndPrevButtons：“yes” - 这可以是“或”否”。隐藏或显示下一个和上一个播放列表按钮。
+        showThumbnail:"yes",	//	showThumbnail：“yes” - 这可以是“或”否”。它显示或不显示游戏缩略图。
+        forceDisableDownloadButtonForFolder:"yes",	//	forceDisableDownloadButtonForFolder：“yes” - 这可以是yes或no。禁用或启用从文件夹加载视频的播放列表的下载按钮。
+        addScrollOnMouseMove:"no",	//	addScrollOnMouseMove：“no” - 这可以是 yes 或 no。
+        showOnlyThumbnail:"no",	//	showOnlyThumbnail：“no” - 这可以是 yes 或 no。如果设置为 yes，则播放列表中仅显示缩略图图像，则删除文本。
+        addMouseWheelSupport:"yes",	//	addMouseWheelSupport：“yes” - 这可以是或否。
+        startAtRandomVideo:"no",	//	startAtRandomVideo：“是” - 这可以是或否，如果设置为是，则播放列表将在第一次播放随机视频时加载。
+        stopAfterLastVideoHasPlayed:"no",	//	stopAfterLastVideoHasPlayed：“no” - 这可以是或否，如果设置为是，当播放列表中的最后一个视频完成播放时，播放列表将不会循环播放（播放列表中的第一个视频将不会播放）。
+        randomizePlaylist:'no',	//	randomizePlaylist：“no” - 这可以是“是”或“否”。如果设置为“是”，则播放列表将在每次加载时随机化。
+        folderVideoLabel:"VIDEO ",	//	folderVideoLabel：“Video - ” - 这表示从文件夹加载的视频的开始标签，在此标签之后，脚本将添加计数视频编号，例如视频 - 1、视频 - 2 等。
+        playlistRightWidth:310,	//	播放列表右侧宽度：310 - 位于右侧时的播放列表宽度。
+        playlistBottomHeight:599,	//	播放列表底部高度：310 - 位于底部时的播放列表高度。
+        startAtVideo:0,	//	startAtVideo：“0” - 一个数字，表示首次加载 UVP 时将加载的视频，如果使用深度链接并且浏览器 URL 具有视频链接，则忽略此选项。视频计数从 0（零）开始。
+        maxPlaylistItems:50,	//	maxPlaylistItems：50 - 如果必须限制播放列表项目的数量，这将非常有用，例如，如果播放列表是从 Youtube 加载的，并且它有 1000 个视频，则显示起来会很大，因此播放列表将只显示 50 个视频，如果您想无限制地加载总可用视频，请将此数字设置为像 10000 这样的大数字。
+        thumbnailWidth:70,	//	缩略图宽度：70 - 缩略图宽度（以像素为单位）。
+        thumbnailHeight:70,	//	缩略图高度：70 - 缩略图高度（以像素为单位）。
+        spaceBetweenControllerAndPlaylist:1,	//	spaceBetweenControlerAndPlaylist：2 - 视频控制栏和播放列表之间的像素空间。
+        spaceBetweenThumbnails:2,	//	空格之间的缩略图：2 - 缩略图之间的垂直空间（以像素为单位）。
+        scrollbarOffestWidth:8,	//	scrollbarOffestWidth：2 - 要从播放列表中删除的总宽度，以便为播放列表滚动条腾出空间。
+        scollbarSpeedSensitivity:.5,	//	scollbarSpeedSensitivity：.5 - 一个介于 0.1 到 1 之间的数字，表示滚动条速度敏感度。
+        playlistBackgroundColor:"#000000",	//	播放列表背景颜色：“#000000” - 播放列表背景色。
+        playlistNameColor:"#FFFFFF",	//	播放列表名称颜色：“#FFFFFF” - 播放列表名称颜色。
+        thumbnailNormalBackgroundColor:"#1b1b1b",	//	缩略图正常背景颜色：“#1b1b1b” - 播放列表缩略图背景正常颜色。
+        thumbnailHoverBackgroundColor:"#313131",	//	缩略图悬停背景颜色：“#1b1b1b” - 播放列表缩略图背景悬停颜色。
+        thumbnailDisabledBackgroundColor:"#272727",	//	缩略图禁用背景颜色：“#1b1b1b” - 播放列表缩略图背景选择的颜色。
+        searchInputBackgroundColor:"#000000",	//	searchInputBackgroundColor：“#000000” - 搜索输入背景颜色。
+        searchInputColor:"#999999",	//	searchInputColor：“#000000” - 搜索输入颜色。
+        youtubeAndFolderVideoTitleColor:"#FFFFFF",	//	youtubeAndFolderVideoTitleColor：“#FFFFFF” - 从YouTube，Vimeo（如果Vimeo专辑用作播放列表源）或视频文件夹加载的视频的标题颜色。
+        folderAudioSecondTitleColor:"#999999",	//	文件夹音频第二标题颜色：“#999999” - 从音频文件夹加载的音频的第二种标题颜色。
+        youtubeOwnerColor:"#888888",	//	youtubeOwnerColor：“#FFFFFF” - YouTube视频所有者的颜色。
+        youtubeDescriptionColor:"#888888",	//	youtubeDescriptionColor：“#FFFFFF” - youtube或vimeo（如果使用vimeo专辑作为播放列表源）视频描述的颜色，这将适用于按下鑱絠鑱絙utton时信息窗口中的文本。
+        mainSelectorBackgroundSelectedColor:"#FFFFFF",	//	空 空
+        mainSelectorTextNormalColor:"#FFFFFF",	//	空 空
+        mainSelectorTextSelectedColor:"#000000",	//	空 空
+        mainButtonBackgroundNormalColor:"#212021",	//	空 空
+        mainButtonBackgroundSelectedColor:"#FFFFFF",	//	空 空
+        mainButtonTextNormalColor:"#FFFFFF",	//	空 空
+        mainButtonTextSelectedColor:"#000000",	//	空 空
+        //controller settings	//	//控制器设置 <B1101> 
+        showController:"yes",	//	showController：“是”， 
+        showControllerWhenVideoIsStopped:"yes",	//	showControllerWhenVideoIsStop：“yes” - 这可以是或否，如果设置为是，则在视频停止时显示控制栏，并且视频海报可见，否则控制栏将隐藏，直到视频开始播放。
+        showNextAndPrevButtonsInController:"no",	//	showNextAndPrevButtonsInController：“yes” - 这可以是yes或no。隐藏或显示控制栏中的下一个和上一个视频按钮。
+        showRewindButton:"yes",	//	
+        showPlaybackRateButton:"yes",	//	showPlaybackRateButton：“yes” - 这可以是“或”否”。隐藏或显示播放速率/速度按钮。
+        showVolumeButton:"yes",	//	showVolumeButton：“yes” - 这可以是 yes 或 no。隐藏或显示音量按钮。
+        showTime:"yes",	//	showTime：“是” - 这可以是“或”否”。隐藏或显示视频当前和总时间指示器。
+        showQualityButton:"yes",	//	showQualityButton：“yes”， 
+        showInfoButton:"yes",	//	showInfoButton：“yes”，
+        showDownloadButton:"yes",	//	showDownloadButton：“yes” - 这可以是 yes 或 no。全局隐藏或显示视频下载按钮。
+        showFacebookButton:"yes",	//	showFacebookButton：“yes”，
+        showEmbedButton:"yes",	//	showEmbedButton：“yes” - 这可以是yes或no。隐藏或显示嵌入按钮。
+        showChromecastButton:"no",	//	要在播放器构造函数showChromecastButton：“是”中启用此功能集，如果您不需要它，只需将其设置为showChromecastButton：“no”。
+        showFullScreenButton:"yes",	//	showFullScreenButton：“yes” - 这可以是 yes 或 no。隐藏或显示全屏按钮。
+        showShareButton:"yes",	//	showShareButton：“是” - 这可以是“或”否”。隐藏或显示共享窗口按钮。
+        showYoutubeQualityButton:"yes",	//	showYoutubeQualityButton：“是” - 这可以是“或”否”。隐藏或显示YouTube质量按钮（这仅适用于从Youtube播放视频的情况）。
+        disableVideoScrubber:"no",	//	禁用VIdeoScrubber：“否” - 这可以是“是”或“否”。禁用或启用视频清理器。
+        showScrubberWhenControllerIsHidden:"yes",	//	showScrubberWhenControllerIsHidden：“yes” - 这可以是yes或no。隐藏或显示控制器时的视频清理器。
+        showDefaultControllerForVimeo:"no",	//	showDefaultControllerForVimeo：“no” - 这可以是 yes 或 no。普通的Vimeo视频不允许删除播放器的默认控件，因此将此选项保留为否，如果您使用的是Vimeo Pro视频并禁用了vimeo视频控制器，请将此选项设置为是，这样就可以使用UVP控制器。
+        showMainScrubberToolTipLabel:"yes",	//	showMainScrubberToolTipLabel：“yes” - 这可以是或否。隐藏或显示主洗涤器时间工具提示指示器。
+        repeatBackground:"yes",	//	重复背景：“是” - 这可以是“或”否”。重复或不重复控制栏背景。
+        controllerHeight:37,	//	控制器高度：70 - 控制器高度（以像素为单位）。
+        controllerHideDelay:3,	//	controllerHideDelay：2 - 一个数字，表示控制栏在一段时间不活动后隐藏之前的秒数。
+        startSpaceBetweenButtons:7,	//	startSpaceBetweenButtons：10 - 一个数字，表示按钮之间的间距（以像素为单位），下面用红色箭头说明。
+        spaceBetweenButtons:8,	//	spaceBetweenButtons：10 - 一个数字，表示按钮之间的间距（以像素为单位），下面用红色箭头说明。
+        scrubbersOffsetWidth:2,	//	洗涤器偏移宽度：10 - 一个数字，表示在推移条位于末尾时从洗涤器条中删除的像素总量（更改此数字以更好地理解它，根据皮肤类型有用）。
+        mainScrubberOffestTop:14,	//	mainScrubberOffestTop：14 - 当控制器隐藏时向上推主洗涤器的像素量。
+        timeOffsetLeftWidth:5,	//	timeOffsetLeftWidth：10 - 一个数字，表示 ti 之间空格的加法（以 px 为单位）我指示器左侧和洗涤器。
+        timeOffsetRightWidth:3,	//	timeOffsetRightWidth：10 - 一个数字，表示时间指示器右侧和相邻按钮之间的空间的 px 加法。timeOffsetRightWidth：10 - 一个数字，表示时间指示器右侧与音量按钮或将跟随时间指示器的任何其他按钮之间的空间的 px 加法。
+        timeOffsetTop:0,	//	timeOffsetTop：10 - 一个数字，表示 y 轴上时间位置的加法（以 px 为单位）。
+        volumeScrubberHeight:80,	//	体积洗涤器高度：70 - 体积洗涤杆的高度。
+        volumeScrubberOfsetHeight:12,	//	volumeScrubberOfsetHeight：12，
+        timeColor:"#888888",	//	timeColor：“#888888” - 视频时间指示器颜色。
+        youtubeQualityButtonNormalColor:"#888888",	//	youtubeQualityButtonNormalColor：“#888888” - youtube Quality Button文本NormalColor。
+        youtubeQualityButtonSelectedColor:"#FFFFFF",	//	youtubeQualityButtonSelectedColor：“#FFFFFF” - YouTube质量按钮文本选择/悬停颜色。
+        scrubbersToolTipLabelBackgroundColor:"#FFFFFF",	//	洗涤器工具提示标签背景颜色：“#FFFFFF” - 主洗涤器工具提示背景颜色。
+        scrubbersToolTipLabelFontColor:"#5a5a5a",	//	洗涤器工具提示标签字体颜色：“#5a5a5a” - 主洗涤器工具提示文本颜色。
+        //advertisement on pause window	//	暂停窗口上的广告
+        aopwTitle:"Advertisement",	//	 aopwTitle：“广告” - 暂停广告窗口标题。
+        aopwSource:"",	//	aopwSource：“”- 暂停广告窗口源，这必须是指向将在窗口中显示的页面的链接，例如 http://www.webdesign-flash.ro/iframe.html，该页面可以包含任何内容。
+        aopwWidth:400,	//	aopw宽度：400- 暂停广告窗口最大宽度。
+        aopwHeight:240,	//	aopw宽度：240- 暂停广告窗口最大高度。
+        aopwBorderSize:6,	//	aopw边框大小：4- 暂停广告窗口边框高度（以像素为单位）。
+        aopwTitleColor:"#FFFFFF",	//	aopwTitleColor：“#FFFFFF”- 暂停广告窗口标题颜色。
+        //subtitle	//	//字幕
+        subtitlesOffLabel:"Subtitle off",	//	字幕关闭标签：“字幕关闭” - 关闭字幕按钮按钮标签。
+        //popup add windows	//	//popup add windows
+        showPopupAdsCloseButton:"yes",	//	showPopupAdsCloseButton：“yes”，
+        //embed window and info window	//	//embed window and info window
+        embedAndInfoWindowCloseButtonMargins:15,	//	embedWindowCloseButtonMargins：0 - 下一个、上一个和关闭按钮的边距。
+        borderColor:"#333333",	//	borderColor：“#333333” - 主窗口的边框颜色。
+        mainLabelsColor:"#FFFFFF",	//	mainLabelsColor：“#FFFFFF” - 主标签的颜色。
+        secondaryLabelsColor:"#a1a1a1",	//	次要标签颜色：“#a1a1a1” - 辅助标签的颜色。
+        shareAndEmbedTextColor:"#5a5a5a",	//	shareAndEmbedTextColor：“#5a5a5a” - 共享和嵌入文本的颜色。
+        inputBackgroundColor:"#000000",	//	inputBackgroundColor：“#000000” - 输入文本的背景色。
+        inputColor:"#FFFFFF",	//	inputColor：“#000000” - 输入文本的颜色。
+        //audio visualizer	//	音频可视化工具
+        audioVisualizerLinesColor:"#0099FF",	//	音频可视化器线条颜色：“#0099FF” - 音频可视化工具行的颜色。
+        audioVisualizerCircleColor:"#FFFFFF",	//	audioVisualizerCircleColor：“#FFFFFF” - 音频圆圈的颜色。
+        //lightbox settings	//	灯箱设置
+        closeLightBoxWhenPlayComplete:"no",	//	关闭LightBoxWhenPlayComplete：“no” - 这可以是“是”或“否”。如果设置为 yes，则播放灯箱的视频将关闭。
+        lightBoxBackgroundOpacity:.6,	//	lightBox背景不透明度：0.6 - 图形框背景颜色不透明度，一个从0到1的数字。
+        lightBoxBackgroundColor:"#000000",	//	lightBoxBackgroundColor：“#000000” - 十六进制值的 ligthbox 背景色。
+        //sticky on scroll	//	//sticky on scroll
+        stickyOnScroll:"no",	//	stickyOnScroll：“no” - 这可以是 yes 或 no。如果要在滚动页面时以粘滞形式显示播放器，并且播放器不在视口区域中，请将此项设置为 yes，否则保留为 no。
+        stickyOnScrollShowOpener:"yes",	//	stickyOnScrollShowOpener：“no” -这可以是“是”或“否”。
+        stickyOnScrollWidth:"700",	//	粘滞滚动宽度：700 - 以 px 为单位的最大宽度。
+        stickyOnScrollHeight:"394",	//	粘滞滚动高度：394 - 以 px 为单位的最大高度。
+        //sticky display settings	//	//粘滞显示设置
+        showOpener:"yes",	//	显示打开器：“是” - 这可以是“或”否“，它隐藏或显示 UVP 打开器按钮。
+        showOpenerPlayPauseButton:"yes",	//	showOpenerPlayPauseButton：“yes” - 这可以是或否，它隐藏或显示UVP打开器播放/暂停按钮。
+        verticalPosition:"bottom",	//	verticalPosition：“boottom” - 这可以是底部或顶部，代表UVP的垂直位置/对齐方式。
+        horizontalPosition:"center",	//	水平位置：“中心” - 这可以是左，中心或右，代表UVP的水平位置/对齐方式。
+        showPlayerByDefault:"yes",	//	showPlayerByDefault：“yes” - 这可以是或否，如果设置为是，默认情况下将显示UVP，否则将被隐藏。
+        animatePlayer:"yes",	//	animatePlayer：“是” - 这可以是或否，如果设置为是，它将在隐藏或显示时使用补间过渡对播放器进行动画处理。
+        openerAlignment:"right",	//	openerAlignment：“center” - 这可以是左，中心或右，代表显示或隐藏UVP的小按钮的水平位置/对齐方式。
+        mainBackgroundImagePath:"content/minimal_skin_dark/main-background.png",	//	mainBackgroundImagePath：“content/minimal_skin_dark/main-background.png”，
+        openerEqulizerOffsetTop:-1,	//	 openerEqulizerOffsetTop：-1 - 以 px 为单位的偏移顶部 对于打开器均衡器，如果修改皮肤以更好地对齐均衡器，则很有用。
+        openerEqulizerOffsetLeft:3,	//	openerEqulizerOffsetLeft：3 - 以px为单位的左偏移 对于开瓶均衡器，如果修改皮肤以更好地对齐均衡器，则很有用。
+        offsetX:0,	//	offsetX：0 - UVP 实例的水平偏移量（以 px 为单位），根据玩家的水平位置将其视为左边距或右边距。
+        offsetY:0,	//	offsetY：0 - UVP 实例的垂直偏移量（以 px 为单位），根据玩家的垂直位置将其视为顶部或底部的边距。
+        //loggin	//	//loggin
+        isLoggedIn:"no",	//	isLoggedIn：“no” - 如果用户已登录，则将其设置为 yes，当然您必须根据您的网站/项目设置此参数的值。
+        playVideoOnlyWhenLoggedIn:"yes",	//	playVideoOnlyWhenLoggedIn：“yes” - 将其设置为 yes 以仅允许登录用户播放视频。
+        loggedInMessage:"Please login to view this video.",	//	loggedInMessage：“请登录以观看此视频” - 向未记录它的用户显示的消息。
+        //playback rate / speed	//	播放速率/速度
+        defaultPlaybackRate:1, //0.25, 0.5, 1, 1.25, 1.2, 2	//	默认播放速率：1 - 播放速度/速率，接受的数值是0.25，0.5，1，1.25，1.5，2，越高越快，越低1越慢。
+        //cuepoints	//	//cuepoints 
+        executeCuepointsOnlyOnce:"no",	//	executeCuepointsOnlyOnce：“no” - 此选项可以是 yes 或 no。如果您只想执行一次提示点，请将此功能设置为 yes，否则将其设置为 no。 
+        //ads	//	//ads
+        openNewPageAtTheEndOfTheAds:"no",	//	openNewPageAtTheEndOfTheAds：“no” - 如果设置为 yes，则在广告视频播放完毕后，将打开一个新网页，其中包含项目播放列表标记中指定的 URL。
+        playAdsOnlyOnce:"no",	//	playAdsOnlyOnce：“no” - 这可以是“是”或“否”，如果在播放广告视频后设置为“是”，则从播放列表中选择相同的视频，则不会再次播放。
+        adsButtonsPosition:"left",	//	adsButtonsPosition：“right” - 这可以是左或右，代表广告信息和视频上的按钮位置。
+        skipToVideoText:"You can skip to video in: ",	//	skipToVideoText：“您可以在以下位置跳到视频：” - 将出现在跳过信息屏幕中的文本。
+        skipToVideoButtonText:"Skip Ad",	//	skipToVideoButtonText：“跳过广告” - 将显示在广告跳过按钮中的文本。
+        adsTextNormalColor:"#888888",	//	adsTextNormalColor：“#777777” - 规范广告跳过信息屏幕和广告跳过按钮的文本的 AL 颜色。
+        adsTextSelectedColor:"#FFFFFF",	//	adsTextSelectedColor：“#FFFFFF” - 广告跳过信息屏幕和广告跳过按钮的文本的所选颜色。
+        adsBorderNormalColor:"#666666",	//	adsBorderNormalColor：“#444444” - 广告跳过信息屏幕和广告跳过按钮边框的正常颜色。
+        adsBorderSelectedColor:"#FFFFFF",	//	adsBorderSelectedColor：“#FFFFFF” - 广告跳过信息屏幕和广告跳过按钮的边框的所选颜色。
+        //a to b loop	//	//a 到 b 循环
+        useAToB:"yes",	//	useAToB：“yes” - 这可以是 yes 或 no。启用 a 到 b 循环，如果要使用此功能，请确保将此选项设置为 yes。
+        atbTimeBackgroundColor:"transparent",	//	atbTimeBackgroundColor：“transparent” - a 到 b 循环时间背景色。
+        atbTimeTextColorNormal:"#888888",	//	atbTimeTextColorNormal：“#888888” - a 到 b 循环时间文本正常颜色。
+        atbTimeTextColorSelected:"#000000",	//	atbTimeTextColorSelected：“#000000” - a 到 b 循环时间文本所选颜色。
+        atbButtonTextNormalColor:"#FFFFFF",	//	atbButtonTextNormalColor：“#888888” - a 到 b 循环 a 和 b 按钮文本正常颜色。
+        atbButtonTextSelectedColor:"#FFFFFF",	//	atbButtonTextSelectedColor：“#FFFFFF” - a 到 b 循环 a 和 b 按钮文本所选颜色。
+        atbButtonBackgroundNormalColor:"#888888",	//	atbButtonBackgroundNormalColor：“#888888” - a 到 b 循环 a 和 b 按钮背景正常颜色。
+        atbButtonBackgroundSelectedColor:"#000000",	//	atbButtonBackgroundSelectedColor：“#000000” - a 到 b 循环 a 和 b 按钮背景所选颜色。
+        // context menu	//	上下文菜单显示上下文菜单
+        showContextmenu:'yes',	//	：“是” - 这可以是或否。显示或不显示右键单击上下文菜单。
+        showScriptDeveloper:"no",	//	showScriptDeveloper：“no” - 这可以是“是”或“否”。如果您想支持此插件 pelase，请将其设置为 yes。
+        contextMenuBackgroundColor:"#1f1f1f",	//	上下文菜单背景颜色：“#1f1f1f” - 上下文菜单背景颜色。
+        contextMenuBorderColor:"#1f1f1f",	//	上下文菜单边框颜色：“#1f1f1f” - 上下文菜单边框颜色。
+        contextMenuSpacerColor:"#333",	//	上下文菜单间隔颜色：“#333”，
+        contextMenuItemNormalColor:"#888888",	//	上下文菜单项正常颜色：“#1f1f1f” - 上下文菜单文本正常颜色。
+        contextMenuItemSelectedColor:"#FFFFFF",	//	上下文菜单项选定颜色：“#FFFFFF” - 上下文菜单文本选定颜色。
+        contextMenuItemDisabledColor:"#444"	//	上下文菜单项禁用颜色：“#1f1f1f” - 上下文菜单文本禁用颜色。
+
+	});
+});
+</script>
