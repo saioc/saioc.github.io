@@ -1,5 +1,11 @@
 document.write(unescape("%3Clink rel='stylesheet' href='https://baidu.com.im/Staticfile/tool/script/hljs/styles/monokai.css'%3E"));
-document.write(unescape("%3Cscript src='https://baidu.com.im/Staticfile/tool/script/hljs/highlight.pack.js' type='text/javascript'%3E%3C/script%3E"));
+//document.write(unescape("%3Cscript src='https://baidu.com.im/Staticfile/tool/script/hljs/highlight.pack.js' type='text/javascript'%3E%3C/script%3E"));
+var script = document.createElement("script");
+script.src = "https://baidu.com.im/Staticfile/tool/script/hljs/highlight.pack.js";
+script.type = "text/javascript";
+script.async = true;  // 确保脚本异步加载
+document.head.appendChild(script);
+
 $(function(){
 hljs.initHighlightingOnLoad();
 
