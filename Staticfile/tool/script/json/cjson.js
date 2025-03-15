@@ -1,6 +1,6 @@
 window.SINGLE_TAB = "  ";
-window.ImgCollapsed = "/static/images/collapsed.gif";
-window.ImgExpanded = "/static/images/expanded.gif";
+window.ImgCollapsed = "https://baidu.com.im/Staticfile/tool/images/collapsed.gif";
+window.ImgExpanded = "https://baidu.com.im/Staticfile/tool/images/expanded.gif";
 window.QuoteKeys = true;
 function $id(id) { return document.getElementById(id); }
 function IsArray(obj) {
