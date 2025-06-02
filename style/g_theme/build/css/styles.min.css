@@ -214,8 +214,8 @@ h2,h3 {
 }
 }@font-face {
 	font-family:"Glyphicons Halflings";
-	src:url(../fonts/glyphicons-halflings-regular.eot);
-	src:url(../fonts/glyphicons-halflings-regular.eot?#iefix) format("embedded-opentype"),url(../fonts/glyphicons-halflings-regular.woff2) format("woff2"),url(../fonts/glyphicons-halflings-regular.woff) format("woff"),url(../fonts/glyphicons-halflings-regular.ttf) format("truetype"),url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format("svg")
+	src:url(https://cdn.jsdelivr.net/gh/saioc/Static/g_theme/build/fonts/glyphicons-halflings-regular.eot);
+	src:url(https://cdn.jsdelivr.net/gh/saioc/Static/g_theme/build/fonts/glyphicons-halflings-regular.eot?#iefix) format("embedded-opentype"),url(https://cdn.jsdelivr.net/gh/saioc/Static/g_theme/build/fonts/glyphicons-halflings-regular.woff2) format("woff2"),url(https://cdn.jsdelivr.net/gh/saioc/Static/g_theme/build/fonts/glyphicons-halflings-regular.woff) format("woff"),url(https://cdn.jsdelivr.net/gh/saioc/Static/g_theme/build/fonts/glyphicons-halflings-regular.ttf) format("truetype"),url(https://cdn.jsdelivr.net/gh/saioc/Static/g_theme/build/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format("svg")
 }
 .glyphicon {
 	position:relative;
@@ -5688,8 +5688,8 @@ td.visible-print,th.visible-print {
  *  License - http://fontawesome.io/license (Font:SIL OFL 1.1,CSS:MIT License)
  */@font-face {
 	font-family:FontAwesome;
-	src:url(../fonts/fontawesome-webfont.eot);
-	src:url(../fonts/fontawesome-webfont.eot?#iefix) format('embedded-opentype'),url(../fonts/fontawesome-webfont.woff2) format('woff2'),url(../fonts/fontawesome-webfont.woff) format('woff'),url(../fonts/fontawesome-webfont.ttf) format('truetype'),url(../fonts/fontawesome-webfont.svg#fontawesomeregular) format('svg');
+	src:url(https://cdn.jsdelivr.net/gh/saioc/Static/g_theme/build/fonts/fontawesome-webfont.eot);
+	src:url(https://cdn.jsdelivr.net/gh/saioc/Static/g_theme/build/fonts/fontawesome-webfont.eot?#iefix) format('embedded-opentype'),url(https://cdn.jsdelivr.net/gh/saioc/Static/g_theme/build/fonts/fontawesome-webfont.woff2) format('woff2'),url(https://cdn.jsdelivr.net/gh/saioc/Static/g_theme/build/fonts/fontawesome-webfont.woff) format('woff'),url(https://cdn.jsdelivr.net/gh/saioc/Static/g_theme/build/fonts/fontawesome-webfont.ttf) format('truetype'),url(https://cdn.jsdelivr.net/gh/saioc/Static/g_theme/build/fonts/fontawesome-webfont.svg#fontawesomeregular) format('svg');
 	font-weight:400;
 	font-style:normal
 }
@@ -9794,7 +9794,7 @@ section.stats {
 	text-align:center
 }
 }section#contact {
-	background-image:url(../img/World-Map.png);
+	background-image:url(https://cdn.jsdelivr.net/gh/saioc/Static/g_theme/build/img/World-Map.png);
 	background-position:center;
 	background-repeat:no-repeat
 }
@@ -9861,7 +9861,7 @@ body.interstitial-page {
 	color:#1e70dc;
 	padding:13px 52px 13px 20px;
 	border-radius:20px;
-	background-image:url(../img/skip-ad.png);
+	background-image:url(https://cdn.jsdelivr.net/gh/saioc/Static/g_theme/build/img/skip-ad.png);
 	background-color:#fff;
 	background-position:right 11px bottom 50%;
 	background-repeat:no-repeat;
@@ -10301,7 +10301,7 @@ body.frame .banner {
 	padding-bottom:15px
 }
 }.ms-sprite {
-	background-image:url(../img/spritesheet.png);
+	background-image:url(https://cdn.jsdelivr.net/gh/saioc/Static/g_theme/build/img/spritesheet.png);
 	background-repeat:no-repeat;
 	display:inline-block
 }
