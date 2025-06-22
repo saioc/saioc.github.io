@@ -1454,8 +1454,7 @@ window.onload = () => {
   
   const initHotKeys = () => {
     const hotKeys = [
-      '人工智能', 'Python教程', '前端开发', '机器学习', '大数据', 
-      'Java编程', 'Linux命令', '网络安全', '区块链', 'Web开发'
+      "Artificial Intelligence", "Python Tutorial", "Front-end Development", "Machine Learning", "Big Data", "Java Programming", "Linux Commands", "Cybersecurity", "Blockchain", "Web Development"
     ];
     
     const hotKeysContainer = document.querySelector('.hot-keys');
