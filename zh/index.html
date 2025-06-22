@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聚合搜索, 多引擎搜索, 搜索引擎导航, 搜索聚合平台, 聚合工具, 一站式搜索, 快速搜索, 自定义搜索引擎, 搜索入口, 多平台搜索, 书签导入, 浏览器书签导入, 书签管理, 在线书签, 网站导航, 搜索助手, 搜索增强工具, 搜索收藏, 搜索快捷方式, 轻量搜索首页</title>
+  <meta name="keywords" content="聚合搜索, 多引擎搜索, 搜索引擎导航, 搜索聚合平台, 聚合工具, 一站式搜索, 快速搜索, 自定义搜索引擎, 搜索入口, 多平台搜索, 书签导入, 浏览器书签导入, 书签管理, 在线书签, 网站导航, 搜索助手, 搜索增强工具, 搜索收藏, 搜索快捷方式, 轻量搜索首页">
+  <meta name="description" content="一个简洁高效的聚合搜索平台，支持多搜索引擎快速切换与关键词联动查询。支持书签导入与分类管理，打造属于你的个性化搜索导航首页。集成百度、谷歌、必应、DuckDuckGo、维基百科等十余种搜索引擎，一站式搜索，快捷高效。">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light">
+  <header>
+    <div class="logo">🔍 聚合搜索</div>
+    <div class="header-actions">
+      <div class="bookmark-search">
+        <i class="fas fa-search"></i>
+        <input type="text" id="bookmark-search" placeholder="搜索书签..." />
+      </div>
+      <a class="toggle-button" href="/" target="_blank" title="English"><i class="fa-solid fa-language"></i></a>
+    </div>
+  </header>
+
+  <!-- 新增：左侧分类导航 -->
+  <aside class="sidebar hidden" id="sidebar">
+    <h3>书签分类</h3>
+    <ul class="category-list" id="category-list">
+      <li class="category-item active" data-category="">所有书签</li>
+    </ul>
+  </aside>
+  
+  <main id="search-container" class="search-container flex-grow">
+    <!-- 搜索框 -->
+    
+    <!-- 搜索按钮 -->
+    <div class="buttons-container">
+       <input type="text" id="search" class="search-input" placeholder="输入关键词..." autofocus list="search-suggestions" /> 
+      <button id="search-button" class="action-button search-button" title="点击进行搜索">
+        <i class="fas fa-search"></i> 搜索
+      </button>
+      <button id="voice-button" class="action-button voice-button" title="点击使用语音搜索">
+        <i class="fas fa-microphone"></i> 语音
+      </button>
+    </div>
+    <!-- 为 list 属性添加 datalist 元素 -->
+    <datalist id="search-suggestions"></datalist>
+    <!-- 搜索引擎选项卡 -->
+    <div class="search-engine-overflow"><div id="engine-tabs" class="search-engine-tabs"></div></div>
+
+    <!-- 快捷热词 -->
+    <div class="hot-keys" aria-label="快捷热词">
+      <span>AI</span>
+      <span>下载</span>
+      <span>影视</span>
+    </div>
+
+    <!-- 历史记录 -->
+    <div class="history" id="search-history"></div>
+  </main>
+
+  <!-- 自定义网站区域 -->
+  <section class="custom-sites-panel" id="custom-sites-panel">
+    <div class="Collection-config">
+      <h3>我的收藏</h3>
+      <div class="Collection-config-right">
+      <button id="add-site" class="toggle-button" aria-label="添加" title="添加网站">
+        <i class="fa-solid fa-circle-plus"></i>
+      </button>
+      <button id="export-bookmarks" class="toggle-button" aria-label="导出书签" title="导出书签">
+        <i class="fas fa-download"></i>
+      </button>
+      <button id="import-bookmarks" class="toggle-button" aria-label="导入书签" title="导入书签">
+        <i class="fas fa-upload"></i>
+      </button>
+      <button id="toggle-edit-btn" class="toggle-button" aria-label="编辑" title="编辑网站">
+        <i class="fa-solid fa-pen-to-square"></i>
+      </button>
+      <button id="toggle-delete-btn" class="toggle-button" aria-label="删除" title="删除网站"><i class="fa-solid fa-trash"></i></button>
+      
+      <button id="sites-by-Waterfall" class="toggle-button" aria-label="切换视图" title="切换视图"><i class="fa-solid fa-barcode"></i></button>
+
+      </div>
+    </div>
+    <div id="sites-by-category"></div>
+  </section>
+
+  <!-- 引擎配置面板 -->
+  <aside class="config-panel" id="config-panel">
+    <h3 class="color-text-dark">管理搜索引擎</h3>
+    <input type="text" id="engine-name" placeholder="名称" aria-label="搜索引擎名称" />
+    <input type="text" id="engine-url" placeholder="URL模板（如 https://example.com/search?q=）" aria-label="搜索引擎URL" />
+    <button id="add-engine" class="action-button search-button">添加</button>
+    <ul class="engine-list" id="engine-list"></ul>
+  </aside>
+
+  <!-- 弹窗结构 -->
+  <div class="modal-overlay" id="modal-overlay"></div>
+  <div class="modal-box" id="modal-box">
+    <div class="modal-content">
+      <span id="close-modal" class="close-btn">×</span>
+      <h4 id="modal-title" class="color-text-dark">添加网站</h4>
+      <input type="text" id="modal-site-name" placeholder="网站名称" aria-label="网站名称" />
+      <input type="text" id="modal-site-url" placeholder="网站URL" aria-label="网站URL" />
+      <input type="text" id="modal-site-category" placeholder="类别（可选）" aria-label="网站类别" />
+      <button id="submit-site" class="action-button search-button">提交</button>
+    </div>
+  </div>
+
+  <!-- 工具栏 -->
+  <div class="toolbar">
+    <!-- 新增到达顶部按钮 -->
+    <button id="go-to-top" class="sidebar-toggle" aria-label="到达顶部" title="到达顶部"><i class="fas fa-arrow-up"></i></button>
+    <!-- 新增到达底部按钮 -->
+    <button id="go-to-bottom" class="sidebar-toggle" aria-label="到达底部" title="到达底部"><i class="fas fa-arrow-down"></i></button>
+    
+    <button id="config-toggle" class="sidebar-toggle" aria-label="管理引擎" title="管理搜索引擎"><i class="fa-solid fa-cog"></i></button>
+    <button id="resetButton" class="sidebar-toggle reset-button" aria-label="重置网站数据" title="重置网站数据"><i class="fa-solid fa-rotate-left"></i></button>
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="书签分类" title="显示/隐藏书签分类"><i class="fas fa-bars"></i></button>
+    <button class="sidebar-toggle" id="toggle-sidebar" aria-label="显示/隐藏侧边栏" title="显示/隐藏侧边栏"><i class="fa-solid fa-eye-slash"></i></button>
+    <button id="toggle-theme" class="sidebar-toggle" aria-label="切换主题" title="切换主题"><i class="fa-solid fa-moon"></i></button>
+    <button class="sidebar-toggle" id="bg-settings-btn" aria-label="背景设置" title="背景设置"><i class="fas fa-paint-brush"></i></button>
+    
+  </div>
+  <!-- 背景设置面板 -->
+  <div id="bg-settings-panel" class="config-panel">
+    <h3 class="color-text-dark">背景设置</h3>
+    <div class="bg-options">
+      <h4 class="color-text-dark">预设背景</h4>
+      <div class="bg-presets">
+        <button class="bg-preset" data-type="bing">Bing每日壁纸</button>
+        <button class="bg-preset" data-type="solid" data-color="#f8f9fa">浅色</button>
+        <button class="bg-preset" data-type="solid" data-color="#121212">深色</button>
+        <button class="bg-preset" data-type="gradient" data-color="#4158D0,#C850C0,#FFCC70">渐变</button>
+      </div>
+      
+      <h4 class="color-text-dark">自定义背景</h4>
+      <div class="bg-custom">
+        <label class="color-text-dark" for="bg-color">背景颜色：</label>
+        <input type="color" id="bg-color" value="#ffffff" />
+        
+        <label class="color-text-dark" for="bg-image-url">背景图片URL：</label>
+        <input type="text" id="bg-image-url" placeholder="输入图片URL" />
+        
+        <label class="color-text-dark" for="bg-image-file">上传背景图片：</label>
+        <input type="file" id="bg-image-file" accept="image/*" />
+        
+        <label class="color-text-dark" for="bg-opacity">透明度：</label>
+        <input type="range" id="bg-opacity" min="0" max="100" value="100" />
+        
+        <label class="color-text-dark" for="bg-position">图片位置：</label>
+        <select id="bg-position">
+          <option value="center">居中</option>
+          <option value="top">顶部</option>
+          <option value="bottom">底部</option>
+          <option value="left">左侧</option>
+          <option value="right">右侧</option>
+          <option value="cover">铺满</option>
+        </select>
+        
+        <label class="color-text-dark" for="bg-repeat">重复方式：</label>
+        <select id="bg-repeat">
+          <option value="no-repeat">不重复</option>
+          <option value="repeat">重复</option>
+          <option value="repeat-x">横向重复</option>
+          <option value="repeat-y">纵向重复</option>
+        </select>
+        
+        <button id="save-bg-settings" class="action-button search-button">保存设置</button>
+        <button id="reset-bg-settings" class="action-button">重置</button>
+      </div>
+    </div>
+  </div>
+  <footer class="bg-neutral-800 text-white py-8 px-4">
+      <div class="container mx-auto max-w-4xl text-center">
+        <p class="mb-4">© 2025 聚合搜索 | 一站式搜索体验平台</p>
+        <p class="text-neutral-400 text-sm">
+          一个简洁高效的聚合搜索平台，支持多搜索引擎快速切换与关键词联动查询。支持书签导入与分类管理，打造属于你的个性化搜索导航首页。集成百度、谷歌、必应、DuckDuckGo、维基百科等十余种搜索引擎，一站式搜索，快捷高效。
+        </p>
+      </div>
+  </footer>
+ <script src="script-zh.js"></script>
+</body>
+</html>
