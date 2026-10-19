@@ -146,6 +146,7 @@ body {
 	height: calc(100vh) !important;
 	padding-top: 0 !important;
 }
+.zwp-narrow .zwp-nav-btn-r:not(#fake-id) { display: block !important;}
     .tab-setting {
       position: fixed;
       top: 16px;
@@ -855,7 +856,7 @@ dialog::backdrop {
 		width: 100%!important;
 		height: 100%!important
 	}
-
+    
     /* 2. 需要被控制显示/隐藏的目标 Div 样式 */
     .tabs-section {
       z-index: 9998;
