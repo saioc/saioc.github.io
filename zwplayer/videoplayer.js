@@ -738,6 +738,9 @@ function _(t, e, a) {
                     !0
                 }
             };
+            
+
+            
             t && (i.url = t),
             e !== void 0 && (i.isLive = e),
             a && typeof a.resumePosition == "number" && (A = a.resumePosition),
