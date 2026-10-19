@@ -726,7 +726,7 @@ function _(t, e, a) {
                 recordButton: !0,
                 segmentButton: !0,
                 disableMutedConfirm: !0,
-                url: "mf/cache/iptv4.json",
+                url: "iptv4.json",
                 xmc_url: "https://xmcdemo.zwplayer.com:11693/",
                 localPlayback: !0,
                 controlbar: !0,
