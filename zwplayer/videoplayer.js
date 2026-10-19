@@ -224,6 +224,19 @@ function N(t) {
         return !1
     }
 }
+
+// 【核心新增】：检测视频地址协议，如果当前在 HTTPS 环境且视频是 HTTP，自动将网页切到 HTTP
+function checkAndRedirectToHttp(videoUrl) {
+    if (!videoUrl) return false;
+    if (window.location.protocol === 'https:' && videoUrl.toLowerCase().startsWith('http://')) {
+        const targetUrl = new URL(window.location.href);
+        targetUrl.protocol = 'http:';
+        window.location.href = targetUrl.toString();
+        return true;
+    }
+    return false;
+}
+
 function ne(t) {
     if (typeof t != "number" || !isFinite(t) || t < 0)
         return "";
@@ -294,6 +307,27 @@ function P(t, e, a) {
     }
     history.replaceState(null, "", location.pathname + "?" + G(t, e, a))
 }
+
+// 【核心新增】：更新 JSON 列表、子索引 index 与子视频链接 v 的地址栏参数
+function updatePlaylistUrlParams(jsonUrl, index, subVideoUrl, isLive = false, title = '') {
+    if (!jsonUrl) return;
+    const params = new URLSearchParams;
+    params.set("url", jsonUrl);
+    if (typeof index === "number" && index >= 0) {
+        params.set("index", index.toString());
+    }
+    if (subVideoUrl) {
+        params.set("v", subVideoUrl);
+    }
+    if (isLive) {
+        params.set("live", "1");
+    }
+    if (title) {
+        params.set("title", title);
+    }
+    history.replaceState(null, "", location.pathname + "?" + params.toString());
+}
+
 function re() {
     const t = new URLSearchParams(location.search)
       , e = (t.get("url") || "").trim();
@@ -366,7 +400,7 @@ function ce() {
         return;
     const e = document.getElementById("shareCloseX")
       , a = document.getElementById("btnCloseShare")
-      , o = document.getElementById("btnCopyShare")
+      , o = document.getElementById("btnCloseShare")
       , n = document.getElementById("shareUrlInput")
       , i = () => {
         t.open && t.close()
@@ -398,6 +432,8 @@ let u = null
   , S = !0
   , R = 0
   , A = null;
+
+// 【修改说明】：支持页面刷新后自动根据 url、index、v 参数定位并恢复播放视频，同时检测协议
 document.addEventListener("DOMContentLoaded", () => {
     fe(),
     pe(),
@@ -405,17 +441,42 @@ document.addEventListener("DOMContentLoaded", () => {
     ve(),
     Pe(),
     ue();
-    const t = se()
-      , e = t ? p.find(o => o.url === t.url) : null
-      , a = t && !t.isLive && e && typeof e.position == "number" ? e.position : void 0;
-    if (_(t ? t.url : void 0, t ? t.isLive : void 0, a !== void 0 ? {
-        resumePosition: a
-    } : void 0),
-    t) {
-        const o = t.title || B(t.url);
-        k(t.url, o, t.isLive, e && e.subtitle, e && e.position, e && e.duration),
-        P(t.url, t.isLive, o)
+
+    // 1. 读取完整的 URL 参数
+    const urlParams = new URLSearchParams(location.search);
+    const jsonUrl = (urlParams.get("url") || "").trim();
+    const subVideoUrl = (urlParams.get("v") || "").trim();
+    const targetIndex = parseInt(urlParams.get("index") || "0", 10);
+    const isLive = urlParams.get("live") === "1";
+    const videoTitle = (urlParams.get("title") || "").trim();
+
+    // 2. 协议检查：如果是 HTTPS 网页但待播放视频是 HTTP，自动重定向到 HTTP 页面
+    const checkUrl = subVideoUrl || jsonUrl;
+    if (checkAndRedirectToHttp(checkUrl)) {
+        return; // 触发页面重定向，终止后续加载
     }
+
+    // 3. 读取上次历史播放进度
+    const matchedHistory = p.find(o => o.url === (subVideoUrl || jsonUrl));
+    const resumePos = matchedHistory && !isLive && typeof matchedHistory.position === "number" ? matchedHistory.position : undefined;
+
+    // 4. UI 输入框同步填充显示
+    const inputEl = document.getElementById("videoUrlInput");
+    const chkLiveEl = document.getElementById("chkLive");
+    if (inputEl) inputEl.value = jsonUrl;
+    if (chkLiveEl) chkLiveEl.checked = isLive;
+
+    // 5. 初始化播放器并传递 defaultIndex 参数
+    _(jsonUrl || undefined, isLive, {
+        resumePosition: resumePos,
+        defaultIndex: targetIndex // 将 index 传给 ZWPlayer 配置，使其自动切换到第 index 个视频
+    });
+
+    if (jsonUrl) {
+        const titleToSave = videoTitle || B(subVideoUrl || jsonUrl);
+        k(subVideoUrl || jsonUrl, titleToSave, isLive, matchedHistory && matchedHistory.subtitle, matchedHistory && matchedHistory.position, matchedHistory && matchedHistory.duration);
+    }
+
     we(),
     ce(),
     de(),
@@ -426,8 +487,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     ),
     window.addEventListener("pagehide", O)
-}
-);
+});
+
 function ue() {
     document.addEventListener("gesturestart", t => t.preventDefault()),
     document.addEventListener("gesturechange", t => t.preventDefault())
@@ -642,6 +703,8 @@ function D(t) {
     const e = document.querySelector(".video-container");
     e && e.classList.toggle("audio-mode", t === "music")
 }
+
+// 【修改说明】：在 ZWPlayer 初始化中注入 defaultIndex 并添加列表切换事件 onPlaylistItem
 function _(t, e, a) {
     if (u) {
         try {
@@ -663,7 +726,7 @@ function _(t, e, a) {
                 recordButton: !0,
                 segmentButton: !0,
                 disableMutedConfirm: !0,
-                url: "https://v.resource.li/mf/cache/iptv4.json",
+                url: "mf/cache/iptv4.json",
                 xmc_url: "https://xmcdemo.zwplayer.com:11693/",
                 localPlayback: !0,
                 controlbar: !0,
@@ -686,6 +749,8 @@ function _(t, e, a) {
                     mode: "auto"
                 },
                 lang: E(),
+                // 【新增】：如果传入了 defaultIndex 参数，告知播放器默认选取的视频索引
+                ...(a && typeof a.defaultIndex === "number" ? { defaultIndex: a.defaultIndex } : {}),
                 ...n ? {
                     mode: "music",
                     mediaKind: "audio",
@@ -697,6 +762,25 @@ function _(t, e, a) {
                     }
                 } : {},
                 translateApi: "https://ain1.mnbaba.com/subtitle-api/api",
+                
+                // 【核心新增】：列表切换播放时更新 URL 参数（url, index, v）并检测 HTTP 协议
+                onPlaylistItem: function(itemIndex, itemData) {
+                    if (!itemData) return;
+                    const currentJsonUrl = u && u._config && u._config.url;
+                    const currentSubUrl = itemData.url || itemData.src || "";
+                    const itemTitle = itemData.title || itemData.name || "";
+
+                    if (checkAndRedirectToHttp(currentSubUrl)) {
+                        return;
+                    }
+
+                    updatePlaylistUrlParams(currentJsonUrl, itemIndex, currentSubUrl, false, itemTitle);
+                    
+                    if (currentSubUrl) {
+                        k(currentSubUrl, itemTitle || B(currentSubUrl), false);
+                    }
+                },
+
                 onFileLoaded: function(r) {
                     r && r.url && r.file && k(r.url, r.file.name, !1)
                 },
@@ -738,9 +822,6 @@ function _(t, e, a) {
                     !0
                 }
             };
-            
-
-            
             t && (i.url = t),
             e !== void 0 && (i.isLive = e),
             a && typeof a.resumePosition == "number" && (A = a.resumePosition),
@@ -752,6 +833,7 @@ function _(t, e, a) {
     }
     , 100)
 }
+
 function ve() {
     const t = document.getElementById("videoEl")
       , e = document.querySelector(".header")
@@ -794,6 +876,12 @@ function ve() {
                 g(d("form.invalidUrl"));
                 return
             }
+
+            // 【新增】：手动点击播放时检查 HTTP 协议重定向
+            if (checkAndRedirectToHttp(s)) {
+                return;
+            }
+
             const m = B(s);
             _(s, f),
             k(s, m, f),
@@ -890,6 +978,12 @@ function ke(t) {
       , o = document.getElementById("chkLive");
     a && (a.value = e.url),
     o && (o.checked = !!e.islive);
+    
+    // 【新增】：历史记录播放点击时检测 HTTP 重定向
+    if (checkAndRedirectToHttp(e.url)) {
+        return;
+    }
+
     const n = e.islive ? void 0 : typeof e.position == "number" ? e.position : void 0;
     _(e.url, !!e.islive, {
         resumePosition: n
@@ -906,6 +1000,12 @@ function Le(t) {
       , o = document.getElementById("chkLive");
     a && (a.value = e.url),
     o && (o.checked = !!e.islive);
+
+    // 【新增】：收藏夹播放点击时检测 HTTP 重定向
+    if (checkAndRedirectToHttp(e.url)) {
+        return;
+    }
+
     let n;
     if (!e.islive) {
         const i = p.find(r => r.url === e.url);
